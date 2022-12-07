@@ -1,0 +1,83 @@
+body {
+	margin: 5px;
+	background-color: #292823;
+  font-family: 'JetBrainsMono Nerd Font', monospace;
+	font-size: x-large;
+	color: #E9D9B0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+header {
+	text-align: center;
+	margin: 5px;
+}
+
+hr {
+	height: 2px;
+	width: 60%;
+	background-color: #e1bb7d;
+	border-color: #e1bb7d;
+	max-width: 600px;
+}
+
+highlight {
+	color: #E07B4D;
+}
+
+highlight:hover {
+	border-bottom-style: solid;
+	border-bottom-color: #E07B4D;
+}
+
+i {
+	font-size: 46px;
+}
+
+p {
+	margin-top: 5px;
+	max-width: 500px;
+}
+
+a {
+	color: #E9D9B0;
+	text-decoration: none;
+}
+
+a:active {
+	color: #7DAEA3;
+}
+
+a:hover {
+	color: #E07B4D;
+}
+
+.socials {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.devicon-github-original:hover {
+	color: white;
+}
+
+.devicon-c-plain:hover {
+	color: #599DFE;
+}
+
+.devicon-cplusplus-plain:hover {
+	color: #5099B6;
+}
+
+.devicon-bash-plain:hover {
+	color: white;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
