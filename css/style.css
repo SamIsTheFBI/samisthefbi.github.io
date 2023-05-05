@@ -1,0 +1,171 @@
+
+:root {
+	--background-primary: #040404;
+	--background-secondary: #141417;
+	--background-secondary-alt: #1c1c1f;
+	--foreground-primary: #e1e1e1;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--background-primary);
+	color: var(--foreground-primary);
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.hero {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100vh;
+	background-image: url("../assets/misato-walk.gif");
+	background-size: cover;
+	background-position: center;
+
+	position: relative;
+	overflow: hidden;
+}
+
+#socials {
+	margin-top: 1.5rem;
+
+	display:flex;
+	gap: 1.5rem;
+}
+
+a {
+	text-decoration: none;
+	color: var(--foreground-primary);
+}
+
+.hero-content {
+	width: 100%;
+	height: 100vh;
+	backdrop-filter: brightness(10%);
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	position: relative;
+}
+
+.hero-content > nav {
+	position: absolute;
+	top: 2%;
+}
+
+.primary-nav {
+	width: 80%;
+	padding: 0.5rem 2.5rem;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav-items {
+	display: flex;
+	gap: 1rem;
+	justify-content: space-evenly;
+}
+
+.nav-items li {
+	cursor: pointer;
+}
+
+.nav-items li:hover, a:hover {
+	font-weight: bold;
+}
+
+#socials a:hover {
+	color: #e91e63;
+}
+.hero-content .button {
+	position: absolute;
+	top: 60%;
+	opacity: 60%;
+}
+
+.button {
+	margin-top: 1rem;
+	width: fit-content;
+	text-decoration: none;
+	border: solid 1px;
+	border-radius: 1.25rem;
+	padding: .5rem 1rem;
+}
+
+section {
+	padding: 1.25rem 2.5rem;
+	margin: 0 25% 0 25%;
+}
+
+footer {
+	margin: 0px;
+	padding: 1.25rem .5rem;
+	display: flex;
+	justify-content: center;
+}
+
+table {
+	margin-top: 1rem;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td {
+	padding: 0.25rem 0.5rem;
+}
+
+highlight {
+	color: #e91e63;
+}
+
+.code {
+	background-color: var(--background-secondary-alt);
+	overflow-x: scroll;
+	margin-top: 1rem;
+	padding: 16px 40px 16px 16px;
+	font-family: monospace;
+	border-radius: 0.25rem;
+}
+
+@media screen and (max-width: 980px) {
+	main, section {
+		margin: 0 0;
+	}
+
+	.code {
+		overflow-x: scroll;
+	}
+}
+
+@media screen and (max-width: 336px) {
+	.primary-nav {
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+	.nav-items {
+		flex-direction: column;
+	}
+
+	#socials {
+		flex-direction: column;
+		align-items: center;
+	}
+}
