@@ -1,9 +1,10 @@
 
 :root {
-	--background-primary: #040404;
+	--background-primary: #101012;
 	--background-secondary: #141417;
 	--background-secondary-alt: #1c1c1f;
 	--foreground-primary: #e1e1e1;
+	--accent: #e91e63;
 }
 
 * {
@@ -47,14 +48,14 @@ body::-webkit-scrollbar {
 }
 
 a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: var(--foreground-primary);
 }
 
 .hero-content {
 	width: 100%;
 	height: 100vh;
-	backdrop-filter: brightness(10%);
+	backdrop-filter: brightness(36%);
 	display: flex;
 	flex-direction: column;
 	align-content: center;
@@ -63,6 +64,10 @@ a {
 	justify-content: center;
 
 	position: relative;
+}
+
+.hero-content a {
+	text-decoration: none;
 }
 
 .hero-content > nav {
@@ -89,11 +94,11 @@ a {
 }
 
 .nav-items li:hover, a:hover {
-	font-weight: bold;
+	font-weight: bolder;
 }
 
 #socials a:hover {
-	color: #e91e63;
+	color: var(--accent);
 }
 .hero-content .button {
 	position: absolute;
@@ -116,10 +121,14 @@ section {
 }
 
 footer {
+	background-color: var(--background-secondary);
 	margin: 0px;
 	padding: 1.25rem .5rem;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	text-align: center;
+	opacity: 65%;
 }
 
 table {
@@ -133,7 +142,14 @@ td {
 }
 
 highlight {
-	color: #e91e63;
+	font-weight: bolder;
+	color: var(--accent);
+}
+
+h2 {
+	border-bottom: 4px solid var(--accent);
+	width: fit-content;
+	margin: 1.25rem 0rem;
 }
 
 .code {
@@ -143,6 +159,48 @@ highlight {
 	padding: 16px 40px 16px 16px;
 	font-family: monospace;
 	border-radius: 0.25rem;
+}
+
+.techstack {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.25rem;
+}
+
+.techstack li {
+	border: 2px solid #444;
+	border-radius: .25rem;
+	padding: 2px 1.5rem 2px 0rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: 0.3s ease-in-out;
+}
+
+.techstack li:hover {
+	border-color: var(--accent);
+	transition: 0.3s ease-in-out;
+}
+
+.techstack li svg {
+	display: inline-block;
+	height: 36px;
+	padding: 12px;
+}
+
+@media screen and (min-width: 1920px) {
+	.primary-nav {
+		font-size: 1.75rem;
+	}
+
+	h1 {
+		font-size: 3.25rem;
+	}
+
+	p {
+		font-size: 1.75rem;
+	}
 }
 
 @media screen and (max-width: 980px) {
@@ -167,5 +225,11 @@ highlight {
 	#socials {
 		flex-direction: column;
 		align-items: center;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.techstack {
+		flex-flow: column;
 	}
 }
