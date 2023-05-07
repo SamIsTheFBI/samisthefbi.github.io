@@ -1,4 +1,3 @@
-
 :root {
 	--background-primary: #101012;
 	--background-secondary: #141417;
@@ -10,7 +9,6 @@
 * {
 	margin: 0px;
 	padding: 0px;
-	overflow-x: hidden;
 }
 
 html {
@@ -87,6 +85,7 @@ a {
 	display: flex;
 	gap: 1rem;
 	justify-content: space-evenly;
+	list-style-type: none;
 }
 
 .nav-items li {
@@ -165,6 +164,7 @@ h2 {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1.25rem;
+	list-style-type: none;
 }
 
 .techstack li {
@@ -173,6 +173,7 @@ h2 {
 	padding: 2px 1.5rem 2px 0rem;
 
 	display: flex;
+	flex-basis: 25%;
 	align-items: center;
 	justify-content: space-between;
 	transition: 0.3s ease-in-out;
@@ -228,7 +229,7 @@ h2 {
 	}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 405px) {
 	.techstack {
 		flex-flow: column;
 	}
