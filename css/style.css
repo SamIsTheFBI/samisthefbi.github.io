@@ -25,12 +25,20 @@ body::-webkit-scrollbar {
 	display: none;
 }
 
+.hero video {
+	position: absolute;
+	z-index: -1;
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+
 .hero {
 	margin: 0px;
 	padding: 0px;
 	width: 100%;
 	height: 100vh;
-	background-image: url("../assets/misato-walk.gif");
+	/* background-image: url("../assets/misato-walk.gif"); */
 	background-size: cover;
 	background-position: center;
 
@@ -52,8 +60,10 @@ a {
 
 .hero-content {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	backdrop-filter: brightness(36%);
+	background: linear-gradient(0deg, var(--background-primary), transparent);
+	padding: 1px;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
