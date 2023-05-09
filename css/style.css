@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Poppins-Medium";
   src: url(../fonts/Poppins-Medium.ttf);
+	font-display: swap;
 }
 
 :root {
@@ -48,11 +49,18 @@ body::-webkit-scrollbar {
 	overflow: hidden;
 }
 
+.hero p {
+	padding: 0.75rem 2.5rem;
+	text-align: center;
+}
+
 #socials {
 	margin-top: 1.5rem;
 
 	display:flex;
-	gap: 1.5rem;
+	align-items: center;
+	justify-content: center;
+	gap: 1.25rem;
 }
 
 a {
@@ -91,6 +99,12 @@ a {
 
 	display: flex;
 	justify-content: space-between;
+}
+
+.primary-nav .logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .nav-items {
@@ -254,11 +268,11 @@ h2 {
 		gap: 1.5rem;
 	}
 	.nav-items {
-		flex-direction: column;
+		flex-wrap: wrap;
 	}
 
 	#socials {
-		flex-direction: column;
+		flex-wrap: wrap;
 		align-items: center;
 	}
 }
