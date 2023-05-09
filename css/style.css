@@ -133,11 +133,19 @@ footer {
 	background-color: var(--background-secondary);
 	margin: 0px;
 	padding: 1.25rem .5rem;
+	opacity: 65%;
+}
+
+.copyright, footer nav {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	opacity: 65%;
+}
+
+footer nav {
+	gap: 0.75rem;
+	margin-bottom: 1.25rem;
 }
 
 table {
