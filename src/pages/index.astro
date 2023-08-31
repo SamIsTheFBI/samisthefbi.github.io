@@ -22,7 +22,7 @@ import BaseHead from '@components/BaseHead.astro';
 				{
 					Devicons.map(({name, imgUrl, link}) => (
 					<a href={link}>
-  					<img class="h-12 w-fit hover:scale-125 transition-all" src={`src/assets/devicons/${imgUrl}`} alt={name} />
+  					<img class="h-12 w-fit hover:scale-125 transition-all" height="3rem" width="3rem" src={imgUrl.src} alt={name} />
 					</a>
 					))
 				}

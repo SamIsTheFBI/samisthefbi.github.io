@@ -1,117 +1,141 @@
+import Git from '@assets/devicons/git.webp'
+import Github from '@assets/devicons/github.svg'
+import C from '@assets/devicons/c.webp'
+import Cpp from '@assets/devicons/c++.webp'
+import Figma from '@assets/devicons/figma.webp'
+import Firebase from '@assets/devicons/firebase.webp'
+import Gitlab from '@assets/devicons/gitlab.webp'
+import HTML from '@assets/devicons/html.webp'
+import CSS from '@assets/devicons/css.webp'
+import JavaScript from '@assets/devicons/js.webp'
+import TypeScript from '@assets/devicons/typescript.webp'
+import Docker from '@assets/devicons/docker.webp'
+import Bash from '@assets/devicons/bash.webp'
+import MongoDB from '@assets/devicons/mongoDb.webp'
+import Netlify from '@assets/devicons/netlify.webp'
+import NextJS from '@assets/devicons/next.webp'
+import NodeJS from '@assets/devicons/nodejs.webp'
+import Python from '@assets/devicons/python.webp'
+import React from '@assets/devicons/react.webp'
+import TailwindCSS from '@assets/devicons/tailwind.webp'
+import Vercel from '@assets/devicons/vercel.webp'
+import Vite from '@assets/devicons/vite.webp'
+import Astro from '@assets/devicons/astro.webp'
+
 export const Devicons = [
   {
     "name": 'Git',
-    "imgUrl": 'git.webp',
+    "imgUrl": Git,
     "link": 'https://git-scm.com/',
   },
   {
     "name": 'GitHub',
-    "imgUrl": 'github.svg',
+    "imgUrl": Github,
     "link": 'https://github.com/',
   },
   {
     "name": 'C',
-    "imgUrl": 'c.webp',
+    "imgUrl": C,
     "link": 'https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html',
   },
   {
     "name": 'C++',
-    "imgUrl": 'c++.webp',
+    "imgUrl": Cpp,
     "link": 'https://cplusplus.com/',
   },
   {
     "name": "Figma",
-    "imgUrl": "figma.webp",
+    "imgUrl": Figma,
     "link": "https://figma.com/"
   },
   {
     "name": "Firebase",
-    "imgUrl": "firebase.webp",
+    "imgUrl": Firebase,
     "link": "https://firebase.google.com/"
   },
   {
     "name": "GitLab",
-    "imgUrl": "gitlab.webp",
+    "imgUrl": Gitlab,
     "link": "https://about.gitlab.com/"
   },
   {
     "name": "HTML",
-    "imgUrl": "html.webp",
+    "imgUrl": HTML,
     "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
   },
   {
     "name": 'CSS',
-    "imgUrl": 'css.webp',
+    "imgUrl": CSS,
     "link": 'https://developer.mozilla.org/en-US/docs/Web/CSS/Reference',
   },
   {
     "name": "JavaScript",
-    "imgUrl": "js.webp",
+    "imgUrl": JavaScript,
     "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
   {
     "name": "TypeScript",
-    "imgUrl": "typescript.webp",
+    "imgUrl": TypeScript,
     "link": "https://www.typescriptlang.org/"
   },
   {
     "name": "Docker",
-    "imgUrl": "docker.webp",
+    "imgUrl": Docker,
     "link": "https://www.docker.com/"
   },
   {
     "name": 'Bash',
-    "imgUrl": 'bash.webp',
+    "imgUrl": Bash,
     "link": 'https://www.gnu.org/software/bash/'
   },
   {
     "name": "MongoDB",
-    "imgUrl": "mongoDb.webp",
+    "imgUrl": MongoDB,
     "link": "https://www.mongodb.com/"
   },
   {
     "name": "Netlify",
-    "imgUrl": "netlify.webp",
+    "imgUrl": Netlify,
     "link": "https://www.netlify.com/"
   },
   {
     "name": "NextJS",
-    "imgUrl": "next.webp",
+    "imgUrl": NextJS,
     "link": "https://nextjs.org/"
   },
   {
     "name": "NodeJS",
-    "imgUrl": "nodejs.webp",
+    "imgUrl": NodeJS,
     "link": "https://nodejs.org/en"
   },
   {
     "name": "Python",
-    "imgUrl": "python.webp",
+    "imgUrl": Python,
     "link": "https://www.python.org/"
   },
   {
     "name": "React",
-    "imgUrl": "react.webp",
+    "imgUrl": React,
     "link": "https://react.dev/"
   },
   {
     "name": "TailwindCSS",
-    "imgUrl": "tailwind.webp",
+    "imgUrl": TailwindCSS,
     "link": "https://tailwindcss.com/"
   },
   {
     "name": "Vercel",
-    "imgUrl": "vercel.webp",
+    "imgUrl": Vercel,
     "link": "https://vercel.com/"
   },
   {
     "name": "Vite",
-    "imgUrl": "vite.webp",
+    "imgUrl": Vite,
     "link": "https://vitejs.dev/"
   },
   {
     "name": "Astro",
-    "imgUrl": "astro.webp",
+    "imgUrl": Astro,
     "link": "https://astro.build/"
   },
 ];

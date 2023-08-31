@@ -6,6 +6,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://samisthefbi.github.io',
+  experimental: { assets: true },
   integrations: [tailwind({
     applyBaseStyles: true
   }), react()],
