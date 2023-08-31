@@ -1,0 +1,40 @@
+---
+import NavBar from '@components/NavBar.astro'
+import HeroSection from '@components/HeroSection.astro'
+import Footer from '@components/Footer.astro'
+import { Devicons } from '@constants/devicons'
+import BaseHead from '@components/BaseHead.astro';
+---
+
+<html lang="en">
+	<BaseHead title="Homepage" description='My fancy site' />
+	<body class="text-slate-300">
+		<NavBar />
+		<HeroSection />
+		<section id="about" class="w-[100%] px-8 py-3 bg-[#1a232e]">
+			<div class="max-w-3xl mx-auto">
+				<h1 class="heading-underline">About Me</h1>
+				<p class="text-[18px] text-stone-300 font-semibold font-poppins py-6">Hi! I'm a 20 year old CS student from India with a passion for computers and software. Currently, I am in the process of learning full stack web development so that I can create robust web sites.</p>
+				<p class="text-[18px] text-stone-300 font-semibold font-poppins pb-6">My real name is <span class="highlight">Shivam Shekhar Soy</span> but on the internet I'm <span class="highlight">SamIsTheFBI</span>.</p>
+				<p class="text-[18px] text-stone-300 font-semibold font-poppins pb-6">I have been programming for 2 years now, excluding the Scratch & HTML basics they taught us in schools. I have explored the field of coding but found my interest in web development.</p>
+				<h1 class="heading-underline">Skills</h1>
+				<div class="py-8 pt-10 flex flex-wrap gap-6 justify-center">
+				{
+					Devicons.map(({name, imgUrl, link}) => (
+					<a href={link}>
+  					<img class="h-12 w-fit hover:scale-125 transition-all" src={`src/assets/devicons/${imgUrl}`} alt={name} />
+					</a>
+					))
+				}
+				</div>
+			</div>
+		</section>
+		<section id="i-love" class="w-[100%] px-8 py-3 bg-[#1a232e]">
+			<div class="max-w-3xl mx-auto">
+				<h1 class="heading-underline">I ❤️</h1>
+				<p class="text-[18px] text-stone-300 font-semibold font-poppins py-6">Art, <a class="normal-link" href="https://www.instagram./samisthefbi">Drawing</a>, Music, Movies, Linux, <a class="normal-link" href="https://myanimelist.net/profile/SamIsTheFBI">Anime</a>, Retro games.</p>
+			</div>
+		</section>
+		<Footer />
+	</body>
+</html>

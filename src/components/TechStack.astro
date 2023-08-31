@@ -1,0 +1,13 @@
+---
+interface Props {
+  name: string;
+  imgFilePath: string;
+  link?: string;
+}
+
+const { name, imgFilePath, link } = Astro.props
+---
+
+<a href={link} class="">
+  <img class="h-12 w-fit hover:scale-125 transition-all" src={`src/assets/devicons/${imgFilePath}`} alt={name} />
+</a>

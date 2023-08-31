@@ -1,0 +1,28 @@
+---
+import '../base.css'
+import Gits from '../assets/gits.jpg'
+import Resume from '@assets/resume.svg'
+import { Socials } from '@constants/socials'
+---
+
+<img src={Gits} class="absolute h-[100%] w-[100%] object-cover -z-40"></img>
+
+<section id="hero-section" class="backdrop-blur-sm backdrop-brightness-50 h-[80vh] max-h-[720px] max-w-xl sm:max-w-full mx-auto pt-[45%] sm:pt-[150px] bg-gradient-to-t from-[#1a232e] to-transparent">  
+  <content class="flex flex-col items-center text-center gap-8">
+    <h1 class="text-8xl font-jost font-extrabold">Hi, I'm <span class="bg-clip-text text-[#ffffff11] bg-gradient-to-r from-pink-500 to-violet-500">Shivam</span>.   </h1>
+    <p class="font-bold text-stone-400 text-xl">Student | Programmer | FOSS Enjoyer</p>
+    <ul class="flex gap-6 text-lg font-bold text-stone-300">
+      {
+        Socials.map(({name, link}) => (
+          <li class="cursor-pointer hover:underline hover:underline-offset-[9px]"><a href={link}>{name}</a></li>
+        ))
+      }
+    </ul>
+    <p class="text-lg font-extrabold font-poppins text-blue-100 border-2 border-blue-100 rounded-xl py-3 px-5 cursor-pointer">
+      <a class=" flex align-middle gap-3" href="/under-construction">
+        <span>Resume</span>
+        <img src={Resume} class="h-6"></img>
+      </a>
+    </p>
+  </content>
+</section>
