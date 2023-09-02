@@ -6,10 +6,20 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://samisthefbi.github.io',
-  experimental: { assets: true },
   integrations: [tailwind({
     applyBaseStyles: true
   }), react()],
+  image: {
+    domains: [
+      "cdn.donmai.us",
+    ],
+  },
+  markdown: {
+    shikiConfig: {
+      theme: 'rose-pine',
+      wrap: true,
+    },
+  },
   server: {
     host: true,
   }

@@ -7,7 +7,7 @@ author: "Astro Learner"
 authorImage:
   url: ""
 heroImage:
-  url: "https://cdn.donmai.us/original/59/4d/__hanekawa_tsubasa_monogatari_drawn_by_ichisannyonn__594d90a06bf5bb1f61b1e0ed757a84ed.jpg"
+  url: "https://cdn.donmai.us/original/dc/6d/__original_drawn_by_mattaku_mousuke__dc6d67e225e2a2ab88b2841e5fa30d97.jpg"
   alt: "The full Astro logo."
 tags: ["astro", "blogging", "learning in public"]
 ---

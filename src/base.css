@@ -4,7 +4,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind variants;
 
 html {
   scroll-behavior: smooth;
@@ -58,5 +57,17 @@ html {
 
   .normal-link {
     @apply cursor-pointer underline decoration-2 underline-offset-[2px] hover:text-red-400
+  }
+
+  .prose {
+    @apply text-slate-300 font-poppins
+  }
+
+  .prose a {
+    @apply text-red-400 hover:underline hover:decoration-dashed hover:underline-offset-[6px] no-underline
+  }
+
+  .prose details {
+    @apply inline-block cursor-pointer select-none font-light
   }
 }

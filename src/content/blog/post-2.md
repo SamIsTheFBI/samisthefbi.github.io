@@ -3,64 +3,164 @@ title: "My Second Blog Post"
 pubDate: 2023-06-01
 description: "This is the first post of my new Astro blog."
 author: "Astro Learner"
+heroImage:
+  url: "https://cdn.donmai.us/original/c5/aa/__hachikuji_mayoi_monogatari_and_1_more_drawn_by_oogure_ito__c5aabec9a303400208ddd06e06540057.jpg"
+  alt: "Hachikuji"
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-# Canis festo silentibus dea
+<h1 align="center"><i>~/.dotfiles</i></h1>
 
-## Est fidem nullaque natura latus
+![dwm](https://user-images.githubusercontent.com/70562711/185455970-bda57877-0665-45cf-996d-eba1ed4f0bbd.png)
+![i3lock](https://user-images.githubusercontent.com/70562711/185460408-5a0f591a-ac4c-47b7-8afd-ef86f1625820.jpg)
 
-Lorem markdownum et inquit vestis, per virgo campus quoque sanguine ingentem
-sit? Ad quibus et quanta et, quem vultu gerat meo: tibia viro arserunt Minyeia
-miserrima in crinem quod. Iuppiter transferre conubia lauro [inquit
-caeli](http://spatiumsine.com/tergaquique), ira spe.
+## A few programs that I use
 
-Spes verus: vulnifico plebe, novis [ferat plebe](http://www.inania.com/quondam)
-omnia. Modo flammas, ea procul iuvenis tenebris sparsit corpora superest prodit
-adfectas.
+- Window Manager: [dwm](https://dwm.suckless.org/)
+- Terminal: [st](https://st.suckless.org/)
+- Shell: [zsh](https://www.zsh.org/)
+- Text Editor: [Neovim](https://github.com/neovim/neovim)
+- Status Bar: [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async)
+- AUR Helper: [Pikaur](https://github.com/actionless/pikaur)
+- Image Viewer: [sxiv](https://github.com/muennich/sxiv)
+- Screenshot: [maim](https://github.com/naelstrof/maim)
+- Display Server: [Xorg](https://www.x.org/wiki)
+- Compositor: [Picom](https://github.com/dccsillag/picom)
 
-## Parentem surgentibus gyrum confertur facti caelo laborem
+I also make use of [eww widgets](https://github.com/elkowar/eww) to display battery percentage and current song in the lockscreen.
 
-Nympha curae gratus, hac maior musco levemus: ille commenta. Recentia similisque
-functo adorat prece gramina draconibus abies virgine fluminaque colla; nec
-scelus sua Insania trementia thalamos nunc. Quod aves ipsum totidemque hostem.
-Quidem prima admovet Aesone autumnalia, superabitur, mihi etiam.
+## Setup (Arch)
 
-- Armis lupo omne
-- Mortale refert
-- Cum cumque versus
-- Et illi dicentem faciem hic rudibusque magna
-- Poenarum maior tenuaverat nutu
-- Dum nitidaque Lenaeo inficit neque Antium postquam
+If you don't have Arch installed and want to use my setup, then try [my install script](https://github.com/SamIsTheFBI/sami). Installing Arch yourself, getting the dependencies and then cloning my dotfiles is always an alternative that I would suggest.
 
-## Suos protecta altrice venenum iussus
+If you already have Arch installed, figure out dependencies from below, install them & run the following:
 
-Nesseis dextra in conviva petitis inustus est do eadem infantem nasci, id. Isto
-missa, radiantia: quas pondera nostris
-[pace](http://www.frenataquequamvis.com/veri) album, magorum percepit Iovis
-boves pater carchesia relicto. Fera _inter_, tibi, adfer malis habet nautae,
-iterumque, rettulit. In deae notae molle accinctus sepulti _quidem_.
+```bash
+git clone --separate-git-dir=$HOME/.dotfiles https://github.com/SamIsTheFBI/dotfiles.git tmpdotfiles
+rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
+rm -r tmpdotfiles
+```
 
-Quae caput tempora? Versa ausim, dum dum flaventibus pes totaque faciente
-dixisse induta, mendacis solutis madidos prius! Fer percussit hospes auctor
-**capillos ingrato auro** cultu uberrima, duos adolescere plangor potitur
-succendit talia, et tum his.
+<details>
+<summary><b>Dependencies</b></summary><br>
 
-## Arestoridae iubet
+- rsync (for the above command ig)
+- xorg (Display server)
+- xrdb (for themes)
+- i3lock-color (lockscreen)
+- nitrogen (setting wallpaper)
+- pamixer (I use this to control volume)
+- maim (screenshot tool)
+- dunst (notification daemon)
+- libnotify (for dunstify command?)
+- brightnessctl (control screen brightness)
+- noto-fonts-cjk (For CJK font)
+- nerd-fonts-jetbrains-mono (The main font that is everywhere in my build)
+- rofi (app launcher)
+- jgmenu (X11 menu to launch apps)
+- [My dwm build](https://github.com/samisthefbi/dwm) (window manager)
+- [My dmenu build](https://github.com/samisthefbi/dmenu) (dynamic menu)
+- [My st build](https://github.com/samisthefbi/st) (because Alacritty has diminished p10k glyphs & idk how to fix that)
+- [My dwmblocks-async config](https://github.com/samisthefbi/dwmblocks-async) (clickable dwm bar)
+- picom-animations-git (Compositor for those fancy transparency)
+- awk (utility to extract and present information) (I use this for scripts)
+- [eww](https://github.com/elkowar/eww) (for battery percentage and currently playing song in lockscreen)
+- ffmpeg (audio/video converter) (used to extract album art in a script)
+- xdotool (X11 automation tool) (used in theme changer script)
+- yt-dlp (YouTube downloader) (used in YouTube downloader script)
+- paplay (for notification sound)
+- mpv (for watchmedia script)
+- xclip (for copying/pasting)
+- colorpicker
+- mpc (for managing mpd)
+- mpd (music daemon)
+- ncmpcpp (mpd client)
+- python-pywal (for automated themes using setwal script)
+- imagemagick (for making lockscreen background)
+- jq (for booru script)
+- curl (same as above)
+- wget (same as above)
+- sed (same usage as awk)
+- nvim (my preferred text editor)
+- redshift (change color temperature of display)
 
-Tamen vidisti urbem una soror ora, _cura_ heres bis flumina parentem et, esse
-est, oris; unus. Figit canibusve pulvis primus Scylla, movit demittitur fama:
-Eryx. Cum nec enim: saepe, nato simili est crines patientia adultera, pollice.
-Moenia intendensque sic pennas sidera scelus facies decebat in unum gravitate
-Miletum adflatuque, non sanguine.
+</details>
 
-Atque et puer: [tum](http://www.victor.com/adhuc.php) aliquid sub ciconia area.
-Huc incandescit veniet vacarunt virgine precando arripit non caede opus cum
-visum.
+## Troubleshooting
 
-Hunc sollertia silex, manu audet corpora talaribus crearat aere dolore. Pulsus
-reverentia nullo calenti sagitta, fuit eram et medicamine longa **cognoram**:
-belua omnibus fortior _maxima_; viscera tempora. Inmoritur nomine pars
-statuitque laetus bibulaque quid ornata pavet post timorem, pars inania,
-lusisse. Aut si utilis nec malles arbor inferni sub recepit sub sacrum studio,
-ore, plangore debere.
+<details>
+<summary><b>No WiFi after opening a closed laptop lid</b></summary><br>
+
+This happens because opening a closed laptop lid somehow triggers an event to softblock wifi. Weird thing with the kernel apparently.
+
+A simple workaround for this is to edit `/etc/systemd/logind.conf`, uncomment every `HandleLidSwitch` line and put `ignore` as their value (doing this so that system doesn't suspend/sleep). Then, install `acpid` package and head over to `/etc/acpi/`. Open `handler.sh` (may need to use sudo/doas) and find the line containing `button/lid`. In the `open` case add a new line `/usr/bin/rfkill unblock wifi`. Now enable and start acpid with `sudo systemctl enable --now acpid.service && sudo systemctl start --now acpid.service`
+
+</details>
+
+<details>
+<summary><b>Brightness set to maximum when plugging/unplugging charger</b></summary><br>
+
+To fix this,
+
+```
+sudo systemctl stop systemd-backlight@backlight:acpi_video1.service
+sudo systemctl disable systemd-backlight@backlight:acpi_video1.service
+```
+
+</details>
+
+<details>
+<summary><b>Mixing audio inputs with PulseAudio</b></summary>
+<br>
+
+- Set up mixed sound sink:
+  ```
+  pactl load-module module-null-sink sink_name=MixedInputs
+  ```
+- Set up loopback sinks:
+  ```
+  pactl load-module module-loopback sink=MixedInputs
+  ```
+  Repeat this for as many times as the number of inputs you want to mix.
+- Launch pavucontrol and go to Recording tab. Choose All Inputs from the selector at the bottom. You should see new Loopback streams. You can change these to take input from different input devices.
+
+Now you can go to the program to which you want to pass this mixed input to and select `Monitor of Null Output`. You can also set this new source as the default input in `Input Devices`.
+
+</details>
+
+<details>
+<summary><b>(Almost) Windows-like clipboard feature</b></summary>
+<br>
+
+- Get `copyq` clipboard manager. Start it and then run the following in a terminal window:
+  ```
+  copyq config hide_main_window true
+  copyq config close_on_unfocus false
+  ```
+- Also, sometimes copying an image from web browsers by right clicking and then selecting 'Copy Image' does not work. It copies the URL to that image instead of copying the image itself. So, next time, firstly choose 'Open Image in New Tab' when right clicking an image on a web browser and then right click and 'Copy Image'.
+
+</details>
+<details>
+<summary><b>Pacman not working (libcrypto.so.1.1 not found)</b></summary>
+<br>
+
+- Go to archlinux.org/packages and search for openssl. Click Download From Mirror and a .tar.zst file should start downloading.
+- Extract this to a separate folder:
+  ```
+  mkdir some_dir
+  mv openssl*.pkg.tar.zst ./some_dir
+  cd some_dir
+  tar xvf openssl*
+  ```
+- cd to the extracted `usr` directory. cd to `lib` directory. Here you can find `libcrypto.so.1.1` & `libssl.so.1.1`.
+- Copy these two files to your `/usr/lib` directory. You may need to use `sudo` or `doas` here.
+
+- In case you had panicked and rebooted, you would find your kernel is panicked now!. For when this happens, boot with your Arch Install Medium.
+- Connect to internet.
+- Mount the existing Arch Linux partition to `/mnt`.
+- `arch-chroot /mnt`
+- Now you must get the .tar.zst file from archlinux.org/packages. Either `wget` it (aria2c won't work) or if you dual boot, have it copied to your other OS's partition.
+
+Now follow everything as in previous steps. This should fix the problem and you should be able to work with pacman as usual.
+
+</details>

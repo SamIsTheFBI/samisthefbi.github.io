@@ -5,6 +5,7 @@ import Footer from '@components/Footer.astro'
 import BaseHead from "@components/BaseHead.astro";
 import FormattedDate from '../../components/FormattedDate.astro';
 import '../../base.css'
+import { Image } from "astro:assets";
 
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -18,22 +19,30 @@ const posts = (await getCollection("blog"))
     <section class="pt-[65px] w-[100%] px-8 py-3 h-[100%]">
       <div class="max-w-3xl mx-auto my-3">
         <span onclick="history.back()" class="font-poppins cursor-pointer font-bold hover:text-red-400 my-6">← Go Back</span>
-        <h1 class="text-6xl font-jost heading-underline py-3">Posts</h1>
-        <p class="font-poppins pb-6 text-sm">All the articles I've posted. Most of these are going to contain rants and completely random things off of my head.</p>
-        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
+        <h1 class="text-6xl font-jost heading-underline py-3 text-white">Posts</h1>
+        <p class="font-poppins pb-6">All the articles I've posted. Most of these are going to contain rants and completely random things off of my head.</p>
+        <ul class="grid grid-cols-1 gap-6 py-6">
           {
             posts.map((post) => (
               <li class="col-span-1">
-                <a class="border-[1px] rounded-lg border-slate-50/[0.06] overflow-hidden transition-all duration-75 ease-in-out h-full block relative top-0 hover:-top-2 shadow-lg hover:shadow-xl bg-[#212737]" href={`/blog/${post.slug}/`}>
+                <a class="border-[1px] rounded-lg border-slate-50/[0.06] overflow-hidden transition-all duration-75 ease-in-out h-full block relative top-0 hover:-top-2 shadow-lg hover:shadow-red-400/[0.3] bg-[#212737]" href={`/blog/${post.slug}/`}>
                   {
-                    post.data.heroImage && <img class="object-cover w-[100%] aspect-[15/7]" height="192" width="360" src={post.data.heroImage.url} alt={post.data.heroImage.alt} /> 
+                    post.data.heroImage && 
+                      <Image 
+                        class="object-cover w-[100%] aspect-[15/7]"
+                        height={600} 
+                        width={1200} 
+                        src={post.data.heroImage.url} 
+                        alt={post.data.heroImage.alt}
+                        quality={10} 
+                      /> 
                   }
-                  <h4 class="px-3 py-3 text-red-400 text-xl font-jost font-semibold hover:underline hover:decoration-dashed">{post.data.title}</h4>
+                  <h4 class="px-3 py-3 text-red-400 text-2xl font-jost font-semibold hover:underline hover:decoration-dashed hover:underline-offset-[6px]">{post.data.title}</h4>
                   <div class="flex items-center gap-2 px-3">
                     <svg class="h-6 scale-90 w-6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#becddf" d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path fill="#becddf" d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg>
                     <FormattedDate date={post.data.pubDate} />
                   </div>
-                  <p class="px-3 py-3">
+                  <p class="px-3 py-3 text-base">
                     {post.data.description}
                   </p>
                 </a>

@@ -4,6 +4,8 @@ import HeroSection from '@components/HeroSection.astro'
 import Footer from '@components/Footer.astro'
 import { Devicons } from '@constants/devicons'
 import BaseHead from '@components/BaseHead.astro';
+import '../base.css'
+import { Image } from 'astro:assets';
 ---
 
 <html lang="en">
@@ -20,9 +22,15 @@ import BaseHead from '@components/BaseHead.astro';
 				<h1 class="heading-underline">Skills</h1>
 				<div class="py-8 pt-10 flex flex-wrap gap-6 justify-center">
 				{
-					Devicons.map(({name, imgUrl, link}) => (
-					<a href={link}>
-  					<img class="h-12 w-fit hover:scale-125 transition-all" height="3rem" width="3rem" src={imgUrl.src} alt={name} />
+					Devicons.map(({name, imgUrl, link}, key) => (
+					<a key={key} href={link}>
+  					<Image 
+							class="h-12 w-fit hover:scale-125 transition-all"  
+							src={imgUrl} 
+							alt={name}
+							format='webp'
+							quality={80}
+						/>
 					</a>
 					))
 				}
