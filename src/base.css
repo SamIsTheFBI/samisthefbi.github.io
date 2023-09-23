@@ -52,7 +52,7 @@ html {
   }
 
   .heading-underline {
-    @apply font-poppins text-lg font-extrabold underline underline-offset-[9px] decoration-4 decoration-red-400
+    @apply font-poppins text-lg font-extrabold underline sm:underline-offset-[9px] decoration-4 decoration-red-400
   }
 
   .normal-link {
