@@ -30,11 +30,9 @@ export default function DropdownMenu() {
       >
         <Menu.Items className="absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md border border-zinc-400 bg-[#1a232e] shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none divide-zinc-400">
           <div className="py-1 grid px-2">
-            {NavItems.map(({name, link}, key) => {
+            {NavItems.map(({ name, link }, key) => {
               return (
-                <>
-                  <a key={key} className="py-2 px-4" href={link}>{name}</a>
-                </>
+                <a key={key} className="py-2 px-4" href={link}>{name}</a>
               )
             })}
           </div>

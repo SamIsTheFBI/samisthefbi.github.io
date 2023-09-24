@@ -5,6 +5,7 @@ import Footer from '@components/Footer.astro'
 import FormattedDate from '@components/FormattedDate.astro'
 import '../base.css'
 import { Image } from 'astro:assets'
+import BackButton from '@components/BackButton.astro'
 
 const { title, author, description, pubDate, updatedDate, heroImage } = Astro.props
 ---
@@ -15,7 +16,21 @@ const { title, author, description, pubDate, updatedDate, heroImage } = Astro.pr
     <NavBar />
     <main class="mt-[65px] w-[100%] px-8 py-3 pb-14 h-[100%]">
 			<section class="max-w-3xl mx-auto">
-				<span onclick="history.back()" class="font-poppins cursor-pointer font-bold hover:text-red-400 my-3">← Go Back</span>
+        <BackButton />
+				<h1 class="text-6xl sm:text-7xl mt-3 mb-6 font-jost font-semibold text-white text-center">{title}</h1>
+				<div class="text-slate-50/[0.87] my-6 mt-3 border-y-2 border-slate-50/[0.06] py-2 text-center">
+					<div class="">By {author}</div>
+					<date class="flex items-center gap-1 justify-center">
+						<FormattedDate date={pubDate} />
+						{
+							updatedDate && (
+								<div class="text-sm">
+									( last updated on <FormattedDate date={updatedDate} />)
+								</div>
+							)
+						}
+					</date>
+				</div>
 				{
 					heroImage && 
 					<div class="my-6">
@@ -30,21 +45,7 @@ const { title, author, description, pubDate, updatedDate, heroImage } = Astro.pr
 						/>
 					</div>
 				}
-				<h1 class="text-6xl sm:text-7xl mt-3 mb-6 font-jost font-semibold text-white">{title}</h1>
-				<div class="text-stone-400 my-6 mt-3 border-y-2 border-slate-50/[0.06] py-2">
-					<div class="">By {author}</div>
-					<date class="flex items-center gap-1">
-						<FormattedDate date={pubDate} />
-						{
-							updatedDate && (
-								<div class="text-sm">
-									( last updated on <FormattedDate date={updatedDate} />)
-								</div>
-							)
-						}
-					</date>
-				</div>
-				<article class="prose prose-invert prose-h1:font-medium prose-img:border-2 prose-img:border-red-400">
+				<article class="prose prose-invert prose-h1:font-bold prose-img:border-2 prose-img:border-red-400 prose-h2:heading-underline">
 					<slot />
 				</article>
 			</section>
