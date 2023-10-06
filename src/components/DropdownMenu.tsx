@@ -32,7 +32,7 @@ export default function DropdownMenu() {
           <div className="py-1 grid px-2">
             {NavItems.map(({ name, link }, key) => {
               return (
-                <a key={key} className="py-2 px-4" href={link}>{name}</a>
+                <a key={key} className="py-2 px-4 hover:bg-slate-50/[0.27] hover:rounded-sm" href={link}>{name}</a>
               )
             })}
           </div>

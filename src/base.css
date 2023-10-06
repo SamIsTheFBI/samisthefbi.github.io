@@ -28,6 +28,10 @@ html {
   animation: spin 1s linear infinite;
 }
 
+a, button, li {
+  -webkit-tap-highlight-color: transparent;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
