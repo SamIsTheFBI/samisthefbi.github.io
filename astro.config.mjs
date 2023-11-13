@@ -14,6 +14,11 @@ export default defineConfig({
       "cdn.donmai.us",
     ],
   },
+  vite: {
+    ssr: {
+      noExternal: ["react-icons"],
+    },
+  },
   markdown: {
     shikiConfig: {
       theme: 'rose-pine',
