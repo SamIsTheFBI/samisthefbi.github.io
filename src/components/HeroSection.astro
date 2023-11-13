@@ -4,6 +4,8 @@ import Gits from '../assets/gits.jpg'
 import Resume from '@assets/resume.svg'
 import { Socials } from '@constants/socials'
 import { Image } from 'astro:assets';
+import { PiGithubLogoBold, PiEnvelopeSimpleBold, PiLinkedinLogo } from 'react-icons/pi'
+import { RiTwitterXFill } from 'react-icons/ri'
 ---
 
 <Image 
@@ -18,12 +20,11 @@ import { Image } from 'astro:assets';
   <content class="flex flex-col items-center text-center gap-8">
     <h1 class="text-8xl font-jost font-extrabold">Hi, I'm <span class="bg-clip-text text-[#ffffff11] bg-gradient-to-r from-pink-500 to-violet-500">Shivam</span>.   </h1>
     <p class="font-bold text-stone-400 text-xl">Student | Programmer | FOSS Enjoyer</p>
-    <ul class="flex gap-6 text-lg font-bold text-stone-300">
-      {
-        Socials.map(({name, link}) => (
-          <li class="cursor-pointer hover:underline hover:underline-offset-[9px]"><a href={link}>{name}</a></li>
-        ))
-      }
+    <ul class="flex gap-6 text-3xl font-bold text-stone-300 items-center">
+      <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="https://github.com/samisthefbi/"><PiGithubLogoBold /></a></li>
+      <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="mailto:shivamshekharsoy@gmail.com"><PiEnvelopeSimpleBold /></a></li>
+      <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="https://www.linkedin.com/in/samisthefbi/"><PiLinkedinLogo /></a></li>
+      <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="https://twitter.com/SamIsTheFBI"><RiTwitterXFill /></a></li>
     </ul>
     <!-- <p class="text-lg font-extrabold font-poppins text-blue-100 border-2 border-blue-100 rounded-xl py-3 px-5 cursor-pointer"> -->
     <!--   <a class=" flex align-middle gap-3" href="/under-construction"> -->
