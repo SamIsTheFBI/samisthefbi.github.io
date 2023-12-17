@@ -12,6 +12,7 @@ export default defineConfig({
   image: {
     domains: [
       "cdn.donmai.us",
+      "github.com",
     ],
   },
   vite: {

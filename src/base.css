@@ -8,6 +8,29 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 60px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --header-height: 64px;
+  --footer-height: 64px;
+}
+
+.main-height {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.that-effect {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.that-effect >*:not(img) {
+  filter: blur(16px);
+}
+
+.translate-z-20 {
+  transform: translateZ(20px);
 }
 
 .gradient-01 {
@@ -22,14 +45,6 @@ html {
     hsl(220deg 76% 51%) 100%
   );
   filter: blur(125px);
-}
-
-.dummy-hamburger:active {
-  animation: spin 1s linear infinite;
-}
-
-a, button, li {
-  -webkit-tap-highlight-color: transparent;
 }
 
 @keyframes spin {

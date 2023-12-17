@@ -1,48 +1,40 @@
 ---
+import BaseHead from '@components/BaseHead.astro';
 import NavBar from '@components/NavBar.astro'
 import HeroSection from '@components/HeroSection.astro'
 import Footer from '@components/Footer.astro'
-import { Devicons } from '@constants/devicons'
-import BaseHead from '@components/BaseHead.astro';
-import '../base.css'
-import { Image } from 'astro:assets';
 ---
 
 <html lang="en">
-	<BaseHead title="Homepage" description='My fancy site' />
-	<body class="text-slate-300">
-		<NavBar />
-		<HeroSection />
-		<section id="about" class="w-[100%] px-8 py-3 bg-[#1a232e]">
-			<div class="max-w-3xl mx-auto">
-				<h1 class="heading-underline">About Me</h1>
-				<p class="text-[18px] text-stone-300 font-semibold font-poppins py-6">Hi! I'm a 20 year old CS student from India with a passion for computers and software. Currently, I am in the process of learning full stack web development so that I can create robust web sites.</p>
-				<p class="text-[18px] text-stone-300 font-semibold font-poppins pb-6">My real name is <span class="highlight">Shivam Shekhar Soy</span> but on the internet I'm <span class="highlight">SamIsTheFBI</span>.</p>
-				<p class="text-[18px] text-stone-300 font-semibold font-poppins pb-6">I have been programming for 2 years now, excluding the Scratch & HTML basics they taught us in schools. I have explored the field of coding but found my interest in web development.</p>
-				<h1 class="heading-underline">Skills</h1>
-				<div class="py-8 pt-10 flex flex-wrap gap-6 justify-center">
-				{
-					Devicons.map(({name, imgUrl, link}, key) => (
-					<a key={key} href={link}>
-  					<Image 
-							class="h-12 w-fit hover:scale-125 transition-all"  
-							src={imgUrl} 
-							alt={name}
-							format='webp'
-							quality={80}
-						/>
-					</a>
-					))
-				}
-				</div>
-			</div>
-		</section>
-		<section id="i-love" class="w-[100%] px-8 py-3 bg-[#1a232e]">
-			<div class="max-w-3xl mx-auto">
-				<h1 class="heading-underline">I ❤️</h1>
-				<p class="text-[18px] text-stone-300 font-semibold font-poppins py-6">Art, <a class="normal-link" href="https://www.instagram.com/samisthefbi">Drawing</a>, Music, Movies, Linux, Retro games.</p>
-			</div>
-		</section>
-		<Footer />
-	</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>SamIsTheFBI</title>
+		<meta name="description" content="My fancy index page" />
+		<meta name="author" content="Shivam Shekhar Soy, SamIsTheFBI" />
+		<meta property="og:title" content="SamIsTheFBI's index page" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://samisthefbi.github.io/" />
+		<meta property="og:description" content="My fancy index page" />
+	
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+	</head>
+  <body class="bg-[#1a232e] text-slate-300 min-h-screen max-h-full">
+    <header class="overflow-auto h-16">
+      <NavBar />
+    </header>
+    <main class="flex main-height">
+      <div class="m-auto">
+        <HeroSection />
+      </div>
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+    <script is:inline src="/vanilla-tilt.js"></script>
+  </body>
 </html>

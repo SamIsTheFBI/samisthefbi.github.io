@@ -1,7 +1,7 @@
 export const NavItems = [
   {
     "name": "About",
-    "link": "/#about",
+    "link": "/about",
   },
   {
     "name": "Projects",

@@ -9,17 +9,25 @@ import { RiTwitterXFill } from 'react-icons/ri'
 import { FaDiscord } from 'react-icons/fa6'
 ---
 
-<Image 
-  src={Gits} 
-  class="absolute min-h-[665px] h-[100%] w-[100%] object-cover -z-40" 
-  height={720} 
-  width={1280}
-  alt={'Ghost in the Shell still'}
-/>
-
-<section id="hero-section" class="backdrop-blur-sm backdrop-brightness-50 h-[80vh] min-h-[650px] max-h-[720px] max-w-xl sm:max-w-full mx-auto pt-[45%] sm:pt-[150px] bg-gradient-to-t from-[#1a232e] to-transparent">  
-  <content class="flex flex-col items-center text-center gap-8">
-    <h1 class="text-8xl font-jost font-extrabold">Hi, I'm <span class="bg-clip-text text-[#ffffff11] bg-gradient-to-r from-pink-500 to-violet-500">Shivam</span>.   </h1>
+<section 
+  id="hero-section" 
+  class="max-w-xl sm:max-w-full mx-auto
+  ">
+  <content class="flex flex-col items-center text-center gap-4">
+    <div class="w-32 h-32 p-[0.15rem] scale-150 bg-gradient-to-r from-pink-500 to-violet-500 rounded-full flex justify-center that-effect" data-tilt data-tilt-glare data-tilt-reverse="true" data-tilt-scale="1.1">
+      <img 
+        src="https://github.com/samisthefbi.png?size=256" 
+        class="h-auto w-32 object-cover aspect-square rounded-full shadow-red-400 shadow-lg translate-z-20" 
+        height={128} 
+        width={128}
+        alt={'My Github Avatar'}
+        fetchpriority="high"
+        loading="laxy"
+        decoding="async"
+        client:only
+      />
+    </div>
+    <h1 class="text-6xl font-jost font-extrabold">Hi, I'm <span class="bg-clip-text text-[#ffffff11] bg-gradient-to-r from-pink-500 to-violet-500">Shivam</span>.</h1>
     <p class="font-bold text-stone-400 text-xl">Student | Programmer | FOSS Enjoyer</p>
     <ul class="flex gap-6 text-3xl font-bold text-stone-300 items-center">
       <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="https://github.com/samisthefbi/"><PiGithubLogoBold /></a></li>
@@ -28,11 +36,13 @@ import { FaDiscord } from 'react-icons/fa6'
       <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="https://twitter.com/SamIsTheFBI"><RiTwitterXFill /></a></li>
       <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="https://discord.com/users/282149732707467274"><FaDiscord /></a></li>
     </ul>
-    <!-- <p class="text-lg font-extrabold font-poppins text-blue-100 border-2 border-blue-100 rounded-xl py-3 px-5 cursor-pointer"> -->
-    <!--   <a class=" flex align-middle gap-3" href="/under-construction"> -->
-    <!--     <span>Resume</span> -->
-    <!--     <img src={Resume.src} class="h-6" height="1.5rem" width="auto"></img> -->
-    <!--   </a> -->
-    <!-- </p> -->
+    <div class="flex gap-3">
+      <a 
+        class="px-4 py-2 border rounded-md border-slate-50/[0.3] active:bg-gradient-to-r hover:cursor-pointer active:from-pink-500 active:to-violet-500 hover:shadow-red-400 hover:shadow-sm"
+        href="/about"
+      >
+        About Me
+      </a>
+    </div>
   </content>
 </section>
