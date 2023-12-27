@@ -7,6 +7,7 @@ interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+import { ViewTransitions, fade } from 'astro:transitions';
 
 const {
   title,
@@ -41,4 +42,5 @@ const {
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
   <link rel="canonical" href={canonicalURL} />
+  <ViewTransitions transition:animate={fade({duration: "0.2s"})} />
 </head>

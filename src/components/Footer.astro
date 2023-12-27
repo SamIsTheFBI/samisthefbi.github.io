@@ -7,8 +7,12 @@ const getCopyLeftYear = async() => {
 
   const date = new Date()
   const currentYear = date.getFullYear()
-  const createdYear = data.created_at.substring(0, data.created_at.indexOf('-'))
-  const updatedYear = data.updated_at.substring(0, data.created_at.indexOf('-'))
+  const createdYear = data.created_at?.substring(0, data.created_at.indexOf('-'))
+  const updatedYear = data.updated_at?.substring(0, data.created_at.indexOf('-'))
+
+  if(createdYear === undefined){
+    return currentYear
+  }
   
   const copyLeftYear = currentYear === updatedYear ? `${currentYear}` : `${createdYear}-${updatedYear}`
   return copyLeftYear

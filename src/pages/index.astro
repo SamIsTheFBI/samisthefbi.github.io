@@ -3,6 +3,8 @@ import BaseHead from '@components/BaseHead.astro';
 import NavBar from '@components/NavBar.astro'
 import HeroSection from '@components/HeroSection.astro'
 import Footer from '@components/Footer.astro'
+
+import { ViewTransitions, fade } from 'astro:transitions';
 ---
 
 <html lang="en">
@@ -22,6 +24,7 @@ import Footer from '@components/Footer.astro'
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <ViewTransitions transition:animate={fade({duration: "0.2s"})} />
 	</head>
   <body class="bg-[#1a232e] text-slate-300 min-h-screen max-h-full">
     <header class="overflow-auto h-16">
