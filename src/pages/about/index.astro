@@ -1,0 +1,49 @@
+---
+import NavBar from '@components/NavBar.astro'
+import Footer from '@components/Footer.astro'
+import BaseHead from "@components/BaseHead.astro";
+import '../../base.css'
+import BackButton from '@components/BackButton.astro';
+import { PiGithubLogoBold, PiEnvelopeSimpleBold, PiLinkedinLogo, PiInstagramLogoBold } from 'react-icons/pi'
+import { RiTwitterXFill } from 'react-icons/ri'
+import { FaDiscord } from 'react-icons/fa6'
+
+---
+
+<html lang="en">
+  <BaseHead title="About Me" description="About page" />
+  <body class="text-slate-300 bg-[#1a232e]">
+    <header class="overflow-auto h-16">
+      <NavBar />
+    </header>
+    <main class="main-height px-4 py-2">
+      <div class="max-w-3xl mx-auto my-3">
+        <BackButton />
+        <div class="pt-6 px-4 max-md:text-sm font-poppins">
+          <h1 class="text-4xl font-jost heading-underline py-3 text-white">About Me</h1>
+          <p class="py-3">
+            Hi there! I am <strong>Shivam</strong> aka <strong>SamIsTheFBI</strong>. I'm a 20 year old CS undergrad student. I'm an aspiring <strong>full stack web developer</strong> with a passion for UNIX-like systems. I also enjoy some <strong>shell scripting</strong> while I live in my terminal.
+          </p>
+          <p class="py-3">
+            Besides technology, I also like to <strong>draw sometimes</strong>. Although not much as of recent, but you can always find my drawings on my <a target="_blank" class="normal-link" href="https://www.instagram.com/samisthefbi/">Instagram</a>.
+          </p>
+          <p class="py-3">
+            Apart from that, I do enjoy TV shows, movies, anime, music & books like every other normal person does. Might add some of my recommendations on this site someday.
+          </p>
+          <h1 class="text-4xl font-jost heading-underline py-3 text-white">Socials</h1>
+          <p class="py-3">Below are my socials. I don't use them as much but you can trust my word I'll open them atleast once a week!</p>
+          <ul class="py-3 flex gap-6 text-3xl font-bold text-stone-300 items-center">
+            <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="https://github.com/samisthefbi/"><PiGithubLogoBold /></a></li>
+            <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="mailto:shivamshekharsoy@gmail.com"><PiEnvelopeSimpleBold /></a></li>
+            <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="https://www.linkedin.com/in/shivam-shekhar-soy/"><PiLinkedinLogo /></a></li>
+            <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="https://twitter.com/SamIsTheFBI"><RiTwitterXFill /></a></li>
+            <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="https://discord.com/users/282149732707467274"><FaDiscord /></a></li>
+            <li class="cursor-pointer hover:scale-125 transition-all duration-300"><a href="https://www.instagram.com/samisthefbi/"><PiInstagramLogoBold /></a></li>
+          </ul>
+        </div>
+
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

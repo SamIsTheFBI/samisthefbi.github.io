@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         jost: ["Jost", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"],
       },
       backgroundImage: {
         'hero-bg': "url('/src/assets/blue-purple-1.svg')",

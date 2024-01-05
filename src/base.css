@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,500;0,700;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -91,7 +92,7 @@ html {
   }
 
   .normal-link {
-    @apply cursor-pointer underline decoration-2 underline-offset-[2px] hover:text-red-400
+    @apply cursor-pointer underline underline-offset-4 hover:text-stone-200 
   }
 
   .prose {
