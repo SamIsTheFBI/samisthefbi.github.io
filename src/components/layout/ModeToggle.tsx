@@ -35,6 +35,18 @@ export function ModeToggle() {
         }}>
           Dark
         </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => {
+          const t = "system"
+          localStorage.setItem("theme", t)
+
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            root.classList.add("dark")
+          } else {
+            root.classList.remove("dark")
+          }
+        }}>
+          System
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )

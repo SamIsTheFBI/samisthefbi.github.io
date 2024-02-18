@@ -40,19 +40,25 @@ const { title, description, image } = Astro.props
 
   <script is:inline>
     const theme = (() => {
-      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-        return localStorage.getItem('theme');
-      }
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         return 'dark';
       }
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
         return 'light';
     })();
-
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else if(theme === 'dark'){
+ 
+    if(theme === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches){
       document.documentElement.classList.add('dark');
+    } else if (theme === 'system') {
+      if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } else {
+      document.documentElement.classList.remove('dark');
     }
 
     window.localStorage.setItem('theme', theme);
