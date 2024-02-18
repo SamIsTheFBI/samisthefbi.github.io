@@ -1,0 +1,17 @@
+---
+import { HiMiniArrowTopRightOnSquare } from "react-icons/hi2";
+
+const { title, description, link } = Astro.props
+---
+
+<div class="p-5 rounded-md border space-y-3 h-full w-full hover:bg-secondary bg-card text-card-foreground">
+  <div class="flex items-center gap-1">
+    <span class="font-bold">{title}</span>
+    <a target="_blank" href={link}>
+      <HiMiniArrowTopRightOnSquare />
+    </a>
+  </div>
+  <p class="text-sm">
+    {description}
+  </p>
+</div>

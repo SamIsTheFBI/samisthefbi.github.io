@@ -1,43 +1,67 @@
 ---
-import BaseHead from '@components/BaseHead.astro';
-import NavBar from '@components/NavBar.astro'
-import HeroSection from '@components/HeroSection.astro'
-import Footer from '@components/Footer.astro'
+import '@/styles/globals.css'
+import Base from "@/layouts/Base.astro"
+import ProjectCard from "@/components/ProjectCard.astro"
+import Links from "@/components/home/Links.astro"
+import { Image } from 'astro:assets'
 
-import { ViewTransitions, fade } from 'astro:transitions';
+const title = "Home | SamIsTheFBI"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<title>SamIsTheFBI</title>
-		<meta name="description" content="My fancy index page" />
-		<meta name="author" content="Shivam Shekhar Soy, SamIsTheFBI" />
-		<meta property="og:title" content="SamIsTheFBI's index page" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://samisthefbi.github.io/" />
-		<meta property="og:description" content="My fancy index page" />
-	
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <ViewTransitions transition:animate={fade({duration: "0.2s"})} />
-	</head>
-  <body class="bg-[#1a232e] text-slate-300 min-h-screen max-h-full">
-    <header class="overflow-auto h-16">
-      <NavBar />
-    </header>
-    <main class="flex main-height">
-      <div class="m-auto">
-        <HeroSection />
+<Base title={title} description="Fancy home page">
+  <section class="sm:mt-5">
+    <div class="flex items-start gap-6">
+      <Image 
+        src="https://github.com/samisthefbi.png?size=128" 
+        class="h-auto w-16 object-cover aspect-square rounded-full shadow-muted shadow-lg translate-z-20 mb-5" 
+        height={128} 
+        width={128}
+        alt={'My Github Avatar'}
+        quality={50}
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div>
+        <h1 class="text-xl sm:text-4xl font-bold">Shivam Shekhar Soy</h1>
+        <p class="max-md:text-sm text-muted-foreground">Programmer. Artist. Certified Weeb.</p>
       </div>
-    </main>
-    <footer>
-      <Footer />
-    </footer>
-    <script is:inline src="/vanilla-tilt.js"></script>
-  </body>
-</html>
+    </div>
+  </section>
+  <section class="space-y-6">
+    <p>
+      Hi, I'm <span class="font-semibold">Shivam</span> aka <span class="font-semibold">SamIsTheFBI</span>. My interests lie in <span class="font-semibold">web development, UNIX-like systems, shell scripting</span> and <span class="font-semibold">drawing</span>.
+    </p>
+    <p class="">
+      Check my <a class="underline underline-offset-4 hover:font-bold focus:font-bold active:font-bold" target="_blank" href="https://drive.google.com/file/d/1syWr-chgvH2kG-zps-kOX4Zf9CcwrkSG/view?usp=sharing">resume</a> here.
+    </p>
+    <div class="flex gap-6 text-2xl">
+      <Links />
+    </div>
+    <div class="space-y-4">
+      <h1 class="font-bold">Projects</h1>
+      <ul class="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-3">
+        <li>
+          <ProjectCard 
+            title="watchmenu" 
+            description="Organize all of your movies and TV shows & watch them easily with this POSIX script. Also supports YouTube." 
+            link="https://github.com/SamIsTheFBI/watchmenu"
+          />
+        </li>
+        <li>
+          <ProjectCard 
+            title="Mesua Ferrea" 
+            description="Full stack food ordering app with realtime order notification, order queue & inventory management." 
+            link="https://mesua-ferrea.vercel.app/"
+          />
+        </li>
+        <li>
+          <ProjectCard 
+            title="dotfiles" 
+            description="My dotfiles for Arch Linux." 
+            link="https://github.com/SamIsTheFBI/dotfiles"
+          />
+        </li>
+      </ul>
+    </div>
+  </section>
+</Base>
