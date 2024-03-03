@@ -38,8 +38,8 @@ const { title, description, image } = Astro.props
     <ViewTransitions transition:animate={fade({duration: "0.2s"})} />
 	</head>
 
-  <script>
-    function getTheme() {
+  <script is:inline>
+    const theme = (() => {
       if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
         return localStorage.getItem('theme');
       }
@@ -47,16 +47,21 @@ const { title, description, image } = Astro.props
         return 'dark';
       }
         return 'light';
+    })();
+
+    if (theme === 'system') {
+      if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } else if(theme === 'dark'){
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
 
-    const theme = getTheme()
-
     if(theme === 'system'){
-      if(window.matchMedia('(prefers-color-scheme: dark)').matches)
-        document.documentElement.classList.add('dark');
-      else
-        document.documentElement.classList.remove('dark');
-
       window.matchMedia('(prefers-color-scheme: dark)')
             .addEventListener('change',({ matches }) => {
         if (matches) {
@@ -65,12 +70,9 @@ const { title, description, image } = Astro.props
           document.documentElement.classList.remove('dark');
         }
       })
-    } else if (theme === 'dark'){
-      document.documentElement.classList.add('dark')
     } else {
-      document.documentElement.classList.remove('dark')
+      window.localStorage.setItem('theme', theme);
     }
-
   </script>
   <body class="min-h-screen max-h-full bg-background">
     <Header />
