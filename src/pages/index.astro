@@ -1,5 +1,4 @@
 ---
-import '@/styles/globals.css'
 import Base from "@/layouts/Base.astro"
 import ProjectCard from "@/components/ProjectCard.astro"
 import Links from "@/components/home/Links.astro"
@@ -42,9 +41,9 @@ const title = "Home | SamIsTheFBI"
       <ul class="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-3">
         <li>
           <ProjectCard 
-            title="watchmenu" 
-            description="Organize all of your movies and TV shows & watch them easily with this POSIX script. Also supports YouTube." 
-            link="https://github.com/SamIsTheFBI/watchmenu"
+            title="Supablog" 
+            description="A fullstack blog with CMS built with Next14 + Tiptap Editor + ShadcnUI + UploadThing" 
+            link="https://github.com/SamIsTheFBI/supablog"
           />
         </li>
         <li>
@@ -52,6 +51,20 @@ const title = "Home | SamIsTheFBI"
             title="Mesua Ferrea" 
             description="Full stack food ordering app with realtime order notification, order queue & inventory management." 
             link="https://mesua-ferrea.vercel.app/"
+          />
+        </li>
+        <li>
+          <ProjectCard 
+            title="watchmenu" 
+            description="Organize all of your movies and TV shows & watch them easily with this Bash script. Also supports YouTube." 
+            link="https://github.com/SamIsTheFBI/watchmenu"
+          />
+        </li>
+        <li>
+          <ProjectCard 
+            title="license-generator" 
+            description="A POSIX compliant shell script that generates license for your open source projects" 
+            link="https://github.com/SamIsTheFBI/license-generator"
           />
         </li>
         <li>
