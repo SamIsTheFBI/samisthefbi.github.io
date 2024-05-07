@@ -36,7 +36,7 @@ const { title, description, image } = Astro.props
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
 	
-    <ViewTransitions transition:animate={fade({duration: "0.2s"})} />
+    <ViewTransitions transition:animate={fade({duration: "0.4s"})} />
 	</head>
 
   <script is:inline>
@@ -88,7 +88,7 @@ const { title, description, image } = Astro.props
   <body class="min-h-screen max-h-full bg-background">
     <Header />
     <main class="flex main-height">
-      <div class="mx-auto max-w-2xl p-4">
+      <div class="mx-auto max-w-2xl p-4" transition:animate="slide">
         <slot />
       </div>
     </main>

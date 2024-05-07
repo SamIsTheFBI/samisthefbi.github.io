@@ -19,25 +19,26 @@ const title = "Home | SamIsTheFBI"
         quality={50}
         fetchpriority="high"
         decoding="async"
+        transition:name="pfp"
       />
       <div>
-        <h1 class="text-xl sm:text-4xl font-bold tracking-tighter">Shivam Shekhar Soy</h1>
-        <p class="max-md:text-sm text-muted-foreground">Programmer. Artist. <a href="/extras" class="">Certified Weeb.</a></p>
+        <a href="/about" class="text-xl sm:text-4xl font-bold tracking-tighter" transition:name="my_name">Shivam Shekhar Soy</a>
+        <p class="max-md:text-sm text-muted-foreground">Programmer. Artist. <a href="/extras" class="" transition:name="weeb">Certified Weeb.</a></p>
       </div>
     </div>
   </section>
   <section class="space-y-6">
     <p>
-      Hi, I'm <span class="font-semibold">Shivam</span> aka <span class="font-semibold">SamIsTheFBI</span>. My interests lie in <span class="font-semibold">web development, UNIX-like systems, shell scripting</span> and <span class="font-semibold">drawing</span>.
+      Hi, I'm <a href="/about" class="font-semibold">Shivam</a> aka <a href="/about" class="font-semibold">SamIsTheFBI</a>. My interests lie in <span class="font-semibold">web development, UNIX-like systems, shell scripting</span> and <span class="font-semibold">drawing</span>. Click my name to know more.
     </p>
     <p class="">
-      Check my <a class="underline underline-offset-4 hover:font-bold focus:font-bold active:font-bold" target="_blank" href="https://drive.google.com/file/d/1syWr-chgvH2kG-zps-kOX4Zf9CcwrkSG/view?usp=sharing">resume</a> here.
+      Check my <a class="underline underline-offset-4 hover:font-bold focus:font-bold active:font-bold" target="_blank" href="https://drive.google.com/drive/u/1/folders/18bJ8cmpP-lTkfsk-jyjgF6sCzTDtE8-t">resume</a> here.
     </p>
     <div class="flex gap-2 text-2xl">
       <Links />
     </div>
     <div class="space-y-4">
-      <h1 class="font-bold">Projects</h1>
+      <h1 class="font-bold">Projects</h1><span class="text-muted-foreground text-sm">More on my Github</span>
       <ul class="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-3">
         <li>
           <ProjectCard 

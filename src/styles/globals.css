@@ -87,4 +87,7 @@
   body {
     @apply bg-background text-foreground;
   }
+  ::selection, .text-selected {
+    @apply bg-secondary text-secondary
+  }
 }

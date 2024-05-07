@@ -28,7 +28,7 @@ import { ViewTransitions, fade } from "astro:transitions"
     <meta property="twitter:title" content="Extras | SamIsTheFBI" />
     <meta property="twitter:description" content="Extras" />
 	
-    <ViewTransitions transition:animate={fade({duration: "0.2s"})} />
+    <ViewTransitions transition:animate={fade({duration: "0.4s"})} />
 	</head>
 
   <script is:inline>
@@ -96,7 +96,7 @@ import { ViewTransitions, fade } from "astro:transitions"
   </script>
   <body class="min-h-screen max-h-full bg-background">
     <Header />
-    <main class="main-height p-2 max-w-7xl mx-auto">
+    <main class="main-height p-2 max-w-7xl mx-auto" transition:name="weeb">
     <h1 class="text-2xl tracking-tight text-center text-muted-foreground">a few illustrations I absolutely adore.</h1>
     <div id="gallery" class="mt-5 columns-1 gap-2 lg:gap-3 sm:columns-2 lg:columns-3 xl:columns-4 [&>img:not(:first-child)]:mt-2 lg:[&>img:not(:first-child)]:mt-3">
     </div>
