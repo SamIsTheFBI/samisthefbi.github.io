@@ -29,9 +29,9 @@ const title = "Home | SamIsTheFBI"
   </section>
   <section class="space-y-6">
     <p>
-      Hi, I'm <a href="/about" class="font-semibold">Shivam</a> aka <a href="/about" class="font-semibold">SamIsTheFBI</a>. My interests lie in <span class="font-semibold">web development, UNIX-like systems, shell scripting</span> and <span class="font-semibold">drawing</span>. Click my name to know more.
+      Hi, I'm <a href="/about" class="font-semibold">Shivam</a> aka <a href="/about" class="font-semibold">SamIsTheFBI</a>. My interests lie in <span class="font-semibold">web development, UNIX-like systems, shell scripting</span> and <span class="font-semibold">drawing</span>.
     </p>
-    <p class="">
+    <p class="hidden">
       Check my <a class="underline underline-offset-4 hover:font-bold focus:font-bold active:font-bold" target="_blank" href="https://drive.google.com/drive/u/1/folders/18bJ8cmpP-lTkfsk-jyjgF6sCzTDtE8-t">resume</a> here.
     </p>
     <div class="flex gap-2 text-2xl">
@@ -39,19 +39,22 @@ const title = "Home | SamIsTheFBI"
     </div>
     <div class="space-y-4">
       <h1 class="font-bold">Projects</h1><span class="text-muted-foreground text-sm">More on my Github</span>
-      <ul class="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-3">
+      <ul class="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2">
         <li>
           <ProjectCard 
             title="Supablog" 
             description="A fullstack blog with CMS built with Next14 + Tiptap Editor + ShadcnUI + UploadThing" 
             link="https://github.com/SamIsTheFBI/supablog"
+            live="https://supablog-xi.vercel.app/"
+            tech={['nextdotjs', 'tailwindcss', 'typescript', 'shadcnui', 'supabase']}
           />
         </li>
         <li>
           <ProjectCard 
             title="Mesua Ferrea" 
             description="Full stack food ordering app with realtime order notification, order queue & inventory management." 
-            link="https://mesua-ferrea.vercel.app/"
+            live="https://mesua-ferrea.vercel.app/"
+            tech={['nextdotjs', 'tailwindcss', 'typescript', 'supabase']}
           />
         </li>
         <li>
@@ -59,6 +62,7 @@ const title = "Home | SamIsTheFBI"
             title="watchmenu" 
             description="Organize all of your movies and TV shows & watch them easily with this Bash script. Also supports YouTube." 
             link="https://github.com/SamIsTheFBI/watchmenu"
+            tech={['gnubash']}
           />
         </li>
         <li>
@@ -66,6 +70,7 @@ const title = "Home | SamIsTheFBI"
             title="license-generator" 
             description="A POSIX compliant shell script that generates license for your open source projects" 
             link="https://github.com/SamIsTheFBI/license-generator"
+            tech={['gnubash']}
           />
         </li>
         <li>
@@ -73,6 +78,7 @@ const title = "Home | SamIsTheFBI"
             title="dotfiles" 
             description="My dotfiles for Arch Linux." 
             link="https://github.com/SamIsTheFBI/dotfiles"
+            tech={['gnubash', 'lua']}
           />
         </li>
       </ul>

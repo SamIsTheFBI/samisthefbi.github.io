@@ -1,17 +1,49 @@
 ---
-import { HiMiniArrowTopRightOnSquare } from "react-icons/hi2";
+import { FaGithub } from "react-icons/fa";
+import { CiGlobe } from "react-icons/ci";
+import { Icon } from 'astro-icon/components'
 
-const { title, description, link } = Astro.props
+const { title, description, link, live, tech } = Astro.props
 ---
 
-<div class="p-5 rounded-md border space-y-3 h-full w-full hover:bg-secondary bg-card text-card-foreground">
-  <div class="flex items-center gap-1">
+<div class="px-5 py-3 rounded-md border space-y-3 h-full w-full 
+  bg-card text-card-foreground dark:hover:bg-secondary/35">
+  <div class="flex justify-between items-center gap-1">
     <span class="font-bold">{title}</span>
-    <a target="_blank" href={link}>
-      <HiMiniArrowTopRightOnSquare />
-    </a>
   </div>
   <p class="text-sm">
     {description}
   </p>
+  <div class="flex justify-between gap-1">
+  {
+    tech &&
+    <ul class="flex gap-2">
+      {tech.map((item) => (
+        <Icon 
+          name=`simple-icons:${item}` 
+          class="size-6 rounded-sm p-1"
+          title=`${item.charAt(0).toUpperCase() + item.slice(1)}`
+        />
+      ))}
+    </ul>
+  }
+  <div class="flex gap-1">
+    {
+      live && 
+    <a target="_blank" href={live} 
+      class="hover:bg-secondary p-1 rounded-sm border border-border"
+      title="Live Link">
+      <CiGlobe size={18}/>
+    </a>
+    }
+    {
+      link && 
+    <a target="_blank" href={link} 
+      class="hover:bg-secondary p-1 rounded-sm border border-border" 
+      title="Source Code">
+      <FaGithub size={18}/>
+    </a>
+    }
+  </div>
+  </div>
 </div>
