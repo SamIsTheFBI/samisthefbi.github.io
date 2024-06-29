@@ -21,7 +21,7 @@ const { title, description, link, live, tech } = Astro.props
       {tech.map((item: string) => (
         <Icon 
           name=`simple-icons:${item}` 
-          class="size-6 rounded-sm p-1 dark:text-muted-foreground/45 text-muted-foreground"
+          class="size-6 rounded-sm p-1 dark:text-muted-foreground/55 text-muted-foreground"
           title=`${item.charAt(0).toUpperCase() + item.slice(1)}`
         />
       ))}
