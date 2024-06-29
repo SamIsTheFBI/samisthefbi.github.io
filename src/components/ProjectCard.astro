@@ -18,7 +18,7 @@ const { title, description, link, live, tech } = Astro.props
   {
     tech &&
     <ul class="flex gap-2">
-      {tech.map((item) => (
+      {tech.map((item: string) => (
         <Icon 
           name=`simple-icons:${item}` 
           class="size-6 rounded-sm p-1"
