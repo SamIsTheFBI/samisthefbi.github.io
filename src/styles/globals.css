@@ -90,4 +90,7 @@
   ::selection, .text-selected {
     @apply bg-secondary text-secondary
   }
+  .link {
+    @apply font-bold underline underline-offset-4 hover:decoration-primary decoration-primary/50
+  }
 }

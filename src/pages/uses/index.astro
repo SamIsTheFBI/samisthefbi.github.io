@@ -1,0 +1,63 @@
+---
+import Base from "@/layouts/Base.astro"
+import { Image } from 'astro:assets'
+
+const title = "Home | SamIsTheFBI"
+---
+
+<Base title={title} description="Fancy home page">
+  <section class="space-y-6 mb-6">
+    <div>
+      <h1 class="text-2xl sm:text-4xl font-bold tracking-tighter">Uses</h1>
+      <p class="max-md:text-sm text-muted-foreground">Tech that I use.</p>
+    </div>
+  </section>
+  <section class="space-y-6">
+    <div class="space-y-2">
+      <h1 class="text-lg sm:text-2xl font-bold tracking-tighter">Gear</h1>
+      <ul class="list-disc list-outside ml-4">
+        <li>
+          For my laptop, I use <a href="https://www.amazon.in/HP-15-6-inches-Micro-Edge-Anti-Glare-15s-eq2182AU/dp/B0B4N77Y34" class="link">HP 15s-eq2182AU</a> (16GB RAM + 512GB SSD). It&apos;s
+          got Ryzen 5 5500U which coupled along with the 16 gigs of RAM is enough for
+          running good old low spec video games which I enjoy. It&apos;s also good enough 
+          for coding and watching TV shows or anime in 720p, side by side.
+        </li>
+        <li>
+          My phone is an old <a href="https://www.amazon.in/Redmi-Display-Storage-4000mAH-Battery/dp/B07QMSBC8D" class="link">Redmi 7</a> (3GB+32GB). I use it for nothing more
+          than phone calls, UPI payments & college stuff. And to occasionally play DS
+          games on it.
+        </li>
+      </ul>
+    </div>
+    <div class="space-y-2">
+      <h1 class="text-lg sm:text-2xl font-bold tracking-tighter">Laptop Software</h1>
+      <ul class="list-disc list-outside ml-4">
+        <li><b>OS</b>: Arch Linux + Windows 11</li>
+        <li><b>Window Manager</b>: dwm (patched a lot)</li>
+        <li><b>Text Editor</b>: Neovim</li>
+        <li><b>Terminal</b>: st (with bunch of patches)</li>
+        <li><b>Browser</b>: Google Chrome</li>
+        <li><b>Video Player</b>: mpv</li>
+      </ul>
+    </div>
+    <div class="space-y-2">
+      <h1 class="text-lg sm:text-2xl font-bold tracking-tighter">Phone Software</h1>
+      <ul class="list-disc list-outside ml-4">
+        <li><b>OS</b>: Android 10 / MIUI 11.0.4</li>
+        <li><b>Launcher</b>: OLauncher</li>
+        <li><b>Productivity</b>: Keep Notes</li>
+        <li><b>Music/YouTube</b>: Revanced Extended</li>
+        <li><b>Browser</b>: Google Chrome / 1DM+</li>
+        <li><b>Video Player</b>: VLC</li>
+      </ul>
+    </div>
+    <div class="space-y-2">
+      <h1 class="text-lg sm:text-2xl font-bold tracking-tighter">This Website</h1>
+      <ul class="list-disc list-outside ml-4">
+        <li><b>Framework</b>: Astro</li>
+        <li><b>Font Face</b>: Inter</li>
+      </ul>
+    </div>
+  </section>
+</Base>
+
