@@ -16,5 +16,8 @@ export default defineConfig({
   },
   server: {
     host: true
+  },
+  image: {
+    domains: ["github.com"],
   }
 });
