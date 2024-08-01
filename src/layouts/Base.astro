@@ -89,13 +89,6 @@ const { title, description, image } = Astro.props
   </script>
   <body class="min-h-screen max-h-full bg-background">
     <Header />
-    <Image 
-      alt="Gradient"
-      height="100"
-      width="1440"
-      src="/gradient.png" 
-      class="-left-16 xl:left-0 top-10 rotate-45 absolute blur-3xl max-w-screen h-28 brightness-150 object-cover overflow-clip -z-10 transition-all"
-    />
     <main class="flex main-height">
       <div class="mx-auto max-w-2xl p-4" transition:animate="slide">
         <slot />
