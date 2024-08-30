@@ -80,15 +80,20 @@ import { Image } from 'astro:assets'
       const res = await fetch("https://safebooru.donmai.us/posts.json?tags=ordfav%3AAkatsukiRandom6")
       const images = await res.json()
 
-      const gallery = document.getElementById("gallery")
-      const some = images.map((image) => {
-        let source = image.media_asset.variants[2].url
-        let alt = `${image.tag_string_character.toString()} from ${image.tag_string_copyright.toString()} drawn by ${image.tag_string_artist.toString()}`
-        let img = document.createElement("img")
-        img.src = source
-        img.alt = alt
-        gallery.appendChild(img)
-      })
+      if (images) {
+        const gallery = document.getElementById("gallery")
+        images.map((image) => {
+          let source = image.media_asset.variants[2].url
+          let alt = `${image.tag_string_character.toString()} from ${image.tag_string_copyright.toString()} drawn by ${image.tag_string_artist.toString()}`
+          let img = document.createElement("img")
+          img.src = source
+          img.alt = alt
+          gallery.appendChild(img)
+        })
+        document.getElementById("loading-text").remove()
+      } else {
+        document.getElementById("loading-text-actual").textContent = "some error occurred, sorry :("
+      }
     }
 
     setImages()
@@ -98,6 +103,7 @@ import { Image } from 'astro:assets'
     <Header />
     <main class="main-height p-2 max-w-7xl mx-auto" transition:name="weeb">
     <h1 class="text-2xl tracking-tight text-center text-muted-foreground">a few illustrations I absolutely adore.</h1>
+    <center id="loading-text"><samp id="loading-text-actual">Loading...</samp></center>
     <div id="gallery" class="mt-5 columns-1 gap-2 lg:gap-3 sm:columns-2 lg:columns-3 xl:columns-4 [&>img:not(:first-child)]:mt-2 lg:[&>img:not(:first-child)]:mt-3">
     </div>
     </main>
