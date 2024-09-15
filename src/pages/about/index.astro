@@ -10,32 +10,17 @@ const title = "About | SamIsTheFBI"
 
 <Base title={title} description="Fancy about page">
   <section class="sm:mt-5">
-    <div class="flex items-start gap-6">
-      <Image 
-        src="https://github.com/samisthefbi.png?size=128" 
-        class="h-auto w-16 object-cover aspect-square rounded-full shadow-muted shadow-lg translate-z-20 mb-5" 
-        height={128} 
-        width={128}
-        alt={'My Github Avatar'}
-        quality={50}
-        fetchpriority="high"
-        decoding="async"
-        transition:name="pfp"
-      />
-      <div>
-        <h2 class="text-xl sm:text-2xl font-bold tracking-tighter opacity-95" transition:animate="slide">About me</h2>
-        <p class="max-md:text-sm text-muted-foreground text-pretty">More than just a few words about me</p>
-      </div>
-    </div>
+    <h2 class="text-xl sm:text-2xl font-semibold tracking-tighter opacity-95">About me</h2>
+    <p class="max-md:text-sm text-muted-foreground">Programmer. Artist. <a href="/extras" class="" transition:name="weeb">Certified Weeb.</a></p>
   </section>
-  <section class="space-y-6">
-    <h1 class="text-3xl sm:text-4xl font-bold tracking-tighter text-pretty">
+  <section class="space-y-6 pt-6">
+    <h1 class="text-3xl sm:text-4xl font-semibold tracking-tighter text-pretty">
       I&apos;m <span transition:name="my_name">Shivam Shekhar Soy</span>. I&apos;m a programmer & artist.
     </h1>
     <p class="text-pretty">
       That's what I'm telling people now. There are a lot of things I am interested in. I excel in some, others I just can't stop gushing over and only hoping to be good at!
     </p>
-    <h2 class="text-xl sm:text-2xl font-bold tracking-tighter opacity-95" transition:animate="slide">Computers & me</h2>
+    <h2 class="text-xl sm:text-2xl font-semibold tracking-tighter opacity-95">Computers & me</h2>
     <p class="">
       I have been using computers since I was a 3rd grader when my father bought one for his office work. If I look back now, I spent more time playing video games on a 
       computer rather than doing something productive. But it wasn't until around grade 7 that I took a major step towards programming. I had made my first hello world program
@@ -43,7 +28,7 @@ const title = "About | SamIsTheFBI"
       I was exploring softwares, not through internet (it wasn't as cheap as now) but through DVDs I got from Digit magazines each month. They were jam packed with all kinds of 
       stuff I had never seen before. By 9th grade, I had distro-hopped many Debian-based Linux distributions. Fast forward to now, I'm actually deep diving into programming realm.
     </p>
-    <h2 class="text-xl sm:text-2xl font-bold tracking-tighter opacity-95" transition:animate="slide">The Art Block</h2>
+    <h2 class="text-xl sm:text-2xl font-semibold tracking-tighter opacity-95">The Art Block</h2>
     <p class="">
       Apart from technology, I also love drawing. Or atleast I used to. Since childhood I have found drawing to be one of my favorite pastimes. My drawing books were actually full
       and I was once actually interested in the art class during my school time. I can't remember when I became fond of it. But the cartoons I used to watch, comic books I used
@@ -60,7 +45,7 @@ const title = "About | SamIsTheFBI"
       this much, thank you for visiting this corner of internet.
     </p>
     <ul>
-      <li class="list-disc list-inside underline underline-offset-4 hover:font-bold"><a href="/uses">Tech I Use</a></li>
+      <li class="list-disc list-inside underline underline-offset-4 hover:font-semibold"><a href="/uses">Tech I Use</a></li>
     </ul>
   </section>
 </Base>

@@ -3,93 +3,104 @@ import Base from "@/layouts/Base.astro"
 import ProjectCard from "@/components/ProjectCard.astro"
 import Links from "@/components/home/Links.astro"
 import { Image } from 'astro:assets'
+import { CiLocationOn, CiAt } from "react-icons/ci"
+
+import Munsoc from "@/assets/munsoc.png"
+import Watchmenu from "@/assets/watchmenu.png"
+import Stellarminesite from "@/assets/stellarminesite.png"
+import Mesuaferrea from "@/assets/mesuaferrea.png"
+
+import { MarqueeSkills } from "@/components/home/marquee-skills.tsx"
 
 const title = "Home | SamIsTheFBI"
 ---
 
 <Base title={title} description="Fancy home page">
   <section class="sm:mt-5">
-    <div class="flex items-start gap-6">
-      <Image 
-        src="https://github.com/samisthefbi.png?size=128" 
-        class="h-auto w-16 object-cover aspect-square rounded-full shadow-muted shadow-lg translate-z-20 mb-5" 
-        height={128} 
-        width={128}
-        alt={'My Github Avatar'}
-        quality={50}
-        fetchpriority="high"
-        decoding="async"
-        transition:name="pfp"
-      />
-      <div>
-        <a href="/about" class="text-xl sm:text-4xl font-bold tracking-tighter" transition:name="my_name">Shivam Shekhar Soy</a>
-        <p class="max-md:text-sm text-muted-foreground">Programmer. Artist. <a href="/extras" class="" transition:name="weeb">Certified Weeb.</a></p>
+    <a href="/about" class="text-2xl sm:text-4xl font-semibold tracking-tighter" transition:name="my_name">Shivam Shekhar Soy</a>
+    <p class="max-md:text-sm text-muted-foreground">software developer</p>
+  </section>
+  <section class="space-y-6 pt-3">
+    <div class="space-y-1">
+      <p class="flex gap-2 items-center">
+        <CiLocationOn size={20}/>{" "}Jharkhand, India
+      </p>
+      <div class="flex gap-2 items-center">
+        <CiAt size={20}/>
+        <p>
+          <a href="https://linkedin.com/in/shivam-shekhar-soy" target="_blank" class="link font-normal">LinkedIn</a>, 
+          <a href="https://x.com/samisthefbi" target="_blank" class="link font-normal">Twitter/X</a>,
+          <a href="mailto:shivamshekharsoy@gmail.com" target="_blank" class="link font-normal">Email</a>
+        </p>
       </div>
     </div>
-  </section>
-  <section class="space-y-6">
     <p>
-      Hi, I'm <a href="/about" class="font-semibold">Shivam</a> aka <a href="/about" class="font-semibold">SamIsTheFBI</a>. My interests lie in <span class="font-semibold">web development, UNIX-like systems, shell scripting</span> and <span class="font-semibold">drawing</span>.
+      I'm a 21yo CS undergrad student. My interests lie in <span class="font-semibold">web development, UNIX-like systems, shell scripting</span> and <span class="font-semibold">drawing</span>.
     </p>
-    <p class="hidden">
-      Check my <a class="underline underline-offset-4 hover:font-bold focus:font-bold active:font-bold" target="_blank" href="/resume.pdf">resume</a> here.
+    <p>
+      Beyond my studies, I enjoy participating in hackathons and working on various projects. In my free time, I also like tweaking my linux, watching movies, or obsessing over
     </p>
-    <div class="flex gap-2 text-2xl">
-      <Links />
-    </div>
     <div class="space-y-4">
-      <h1 class="font-bold">Projects</h1><span class="text-muted-foreground text-sm">More on my Github</span>
+      <div>
+        <h3 class="font-semibold text-lg sm:text-xl">Projects</h3>
+        <p class="max-md:text-sm text-muted-foreground">a glimpse what I can build.</p>
+      </div>
       <ul class="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2">
         <li>
           <ProjectCard 
             title="MUNSOC NIT Agartala" 
             description="Created the blog side of the website, all with a full fledged dashboard & text editor for authors & admins." 
-            live="https://munsoc.in/"
-            tech={['nextdotjs', 'tailwindcss', 'typescript', 'shadcnui', 'supabase']}
+            link="https://munsoc.in/"
+            img={Munsoc}
           />
         </li>
         <li>
           <ProjectCard 
-            title="Supablog" 
-            description="A fullstack blog with CMS built with Next14 + Tiptap Editor + ShadcnUI + UploadThing." 
-            link="https://github.com/SamIsTheFBI/supablog"
-            live="https://supablog-xi.vercel.app/"
-            tech={['nextdotjs', 'tailwindcss', 'typescript', 'shadcnui', 'supabase']}
+            title="Stellar Minesite" 
+            description="Built an ML-driven that analyzes data on mining sites during ISRO Space Hackathon NIT Agartala." 
+            link="https://stellar-minesite.vercel.app/"
+            img={Stellarminesite}
+          />
+        </li>
+        <li>
+          <ProjectCard 
+            title="Watchmenu" 
+            description="Organize all of your movies and TV shows & watch them easily with this Bash script. Also supports YouTube." 
+            link="https://github.com/SamIsTheFBI/watchmenu"
+            img={Watchmenu}
           />
         </li>
         <li>
           <ProjectCard 
             title="Mesua Ferrea" 
             description="Full stack food ordering app with realtime order notification, order queue & inventory management." 
-            live="https://mesua-ferrea.vercel.app/"
-            tech={['nextdotjs', 'tailwindcss', 'typescript', 'supabase']}
-          />
-        </li>
-        <li>
-          <ProjectCard 
-            title="watchmenu" 
-            description="Organize all of your movies and TV shows & watch them easily with this Bash script. Also supports YouTube." 
-            link="https://github.com/SamIsTheFBI/watchmenu"
-            tech={['gnubash']}
-          />
-        </li>
-        <li>
-          <ProjectCard 
-            title="license-generator" 
-            description="A POSIX compliant shell script that generates license for your open source projects" 
-            link="https://github.com/SamIsTheFBI/license-generator"
-            tech={['gnubash']}
-          />
-        </li>
-        <li>
-          <ProjectCard 
-            title="dotfiles" 
-            description="My dotfiles for Arch Linux." 
-            link="https://github.com/SamIsTheFBI/dotfiles"
-            tech={['gnubash', 'lua']}
+            link="https://mesua-ferrea.vercel.app/"
+            img={Mesuaferrea}
           />
         </li>
       </ul>
+    </div>
+  </section>
+  <section class="mt-5 space-y-4">
+    <div>
+      <h2 class="text-lg sm:text-xl font-semibold">Hire me</h2>
+      <p class="max-md:text-sm text-muted-foreground">if you need a skilled developer.</p>
+    </div>
+    <div class="max-w-xs sm:max-w-2xl overflow-hidden mx-auto h-40">
+      <MarqueeSkills client:visible="react" />
+    </div>
+    <p>
+      I'm currently looking for a new opportunity to work on exciting projects. I am open to both full-time and part-time roles. 
+    </p>
+    <p>
+      Check my resume here.
+    </p>
+    <div class="relative pattern w-full aspect-video overflow-hidden rounded-lg group transition-all">
+      <div class="backdrop-blur-xs h-full w-full flex flex-col items-center justify-center group-hover:brightness-50">
+        <h2 class="text-3xl sm:text-6xl tracking-tighter font-bold text-primary dark:text-background">Shivam Shekhar Soy</h2>
+        <p class="text-xl sm:text-3xl tracking-tighter font-bold text-primary dark:text-background">Fullstack Developer</p>
+      </div>
+      <a class="group-hover:opacity-100 opacity-0 absolute bottom-3 uppercase transition-all text-xs sm:text-xl text-white translate-x-1/2 right-1/2 font-semibold" href="/resume.pdf">Download my resume</a>
     </div>
   </section>
 </Base>

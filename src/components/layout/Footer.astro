@@ -1,9 +1,16 @@
-<footer class="overflow-hidden h-16 sticky top-0 z-50 w-full border-t text-sm">
-  <div class="max-w-2xl w-full mx-auto px-4 flex h-16 items-center space-x-4 justify-between sm:space-x-0">
+---
+import Links from "@/components/home/Links.astro"
+---
+
+<footer class="overflow-hidden h-24 sticky top-0 z-50 w-full text-sm">
+  <div class="max-w-2xl w-full mx-auto px-4 flex h-20 items-center justify-between">
     <div class="flex gap-6 md:gap-10">
       <a href="/" class="flex items-center space-x-2">
         <span class="inline-block font-normal text-muted-foreground">Shivam Shekhar Soy</span>
       </a>
+    </div>
+    <div class="flex gap-2 text-lg">
+      <Links />
     </div>
   </div>
 </footer>
