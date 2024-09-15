@@ -1,8 +1,6 @@
 ---
 import Base from "@/layouts/Base.astro"
 import ProjectCard from "@/components/ProjectCard.astro"
-import Links from "@/components/home/Links.astro"
-import { Image } from 'astro:assets'
 import { CiLocationOn, CiAt } from "react-icons/ci"
 
 import Munsoc from "@/assets/munsoc.png"
@@ -87,7 +85,7 @@ const title = "Home | SamIsTheFBI"
       <p class="max-md:text-sm text-muted-foreground">if you need a skilled developer.</p>
     </div>
     <div class="max-w-xs sm:max-w-2xl overflow-hidden mx-auto h-40">
-      <MarqueeSkills client:visible="react" />
+      <MarqueeSkills client:only="react" />
     </div>
     <p>
       I'm currently looking for a new opportunity to work on exciting projects. I am open to both full-time and part-time roles. 
