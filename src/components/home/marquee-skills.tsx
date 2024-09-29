@@ -25,7 +25,6 @@ const skills = [
   { link: "https://skillicons.dev/icons?i=express" },
   { link: "https://skillicons.dev/icons?i=figma" },
   { link: "https://skillicons.dev/icons?i=firebase" },
-  { link: "https://skillicons.dev/icons?i=flutter" },
   { link: "https://skillicons.dev/icons?i=git" },
   { link: "https://skillicons.dev/icons?i=github" },
   { link: "https://skillicons.dev/icons?i=go" },
