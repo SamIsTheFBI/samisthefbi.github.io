@@ -1,7 +1,6 @@
 import Marquee from "@/components/magicui/marquee";
 
 const skills = [
-  { link: "https://skillicons.dev/icons?i=androidstudio" },
   { link: "https://skillicons.dev/icons?i=arch" },
   { link: "https://skillicons.dev/icons?i=astro" },
   { link: "https://skillicons.dev/icons?i=aws" },
@@ -19,7 +18,6 @@ const skills = [
   { link: "https://skillicons.dev/icons?i=c" },
   { link: "https://skillicons.dev/icons?i=cpp" },
   { link: "https://skillicons.dev/icons?i=codepen" },
-  { link: "https://skillicons.dev/icons?i=dart" },
   { link: "https://skillicons.dev/icons?i=debian" },
   { link: "https://skillicons.dev/icons?i=docker" },
   { link: "https://skillicons.dev/icons?i=express" },
