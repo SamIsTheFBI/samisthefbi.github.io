@@ -9,7 +9,7 @@
 
 :root {
   --header-height: 64px;
-  --footer-height: 64px;
+  --footer-height: 96px;
 }
 
 .main-height {
@@ -105,7 +105,7 @@
     @apply bg-background text-foreground;
   }
   ::selection, .text-selected {
-    @apply bg-secondary text-secondary
+    @apply bg-secondary-foreground text-secondary
   }
   .link {
     @apply font-semibold underline underline-offset-4 hover:decoration-primary decoration-primary/50
