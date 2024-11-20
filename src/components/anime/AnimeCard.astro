@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets'
+import { LuExternalLink } from "react-icons/lu";
+
+const { title, img, link } = Astro.props
+---
+
+<div class="max-w-xs h-auto rounded-xl relative overflow-clip group drop-shadow-lg hover:drop-shadow-2xl hover:grayscale ease-in-out transition-all">
+  <Image src={img} height="360" width="640" alt={title} class="h-full w-full object-cover"/>
+  <div class="w-full h-full absolute bg-gradient-to-t from-stone-950 via-transparent to-transparent bottom-0 hidden group-hover:block ease-in-out">
+  </div>
+  <div class="font-bold p-3 text-xl absolute bottom-0 w-full tracking-tighter text-white items-center justify-between text-wrap hidden group-hover:flex transition-all fade-in-anim ease-in-out">
+    {title}
+    {
+      link &&
+        <div class="hidden group-hover:block cursor-pointer">
+          <a href={link} target="_blank">
+            <LuExternalLink/>
+          </a>
+        </div>
+    }
+  </div>
+</div>
+

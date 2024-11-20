@@ -13,7 +13,7 @@
 }
 
 .main-height {
-  min-height: calc(100dvh - var(--header-height) - var(--footer-height));
+  min-height: calc(100dvh - var(--footer-height));
 }
 
 .pattern {
@@ -31,6 +31,23 @@
     linear-gradient(90deg,var(--c1)   calc(100%/6),var(--c2) 0 50%,
                           var(--c1) 0 calc(500%/6),var(--c2) 0);
   background-size: calc(1.732*var(--s)) var(--s);
+}
+
+.fade-in-anim {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 200ms;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
  
 @layer base {
