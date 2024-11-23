@@ -119,10 +119,10 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-opacity-95;
   }
   ::selection, .text-selected {
-    @apply bg-secondary-foreground text-secondary
+    @apply bg-secondary-foreground/65 text-secondary
   }
   .link {
     @apply font-semibold underline underline-offset-4 hover:decoration-primary decoration-primary/50
