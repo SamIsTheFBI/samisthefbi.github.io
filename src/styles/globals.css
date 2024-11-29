@@ -8,12 +8,12 @@
 }
 
 :root {
-  --header-height: 64px;
+  --header-height: 16px;
   --footer-height: 96px;
 }
 
 .main-height {
-  min-height: calc(100dvh - var(--footer-height));
+  min-height: calc(100dvh - var(--footer-height) - var(--header-height));
 }
 
 .pattern {
