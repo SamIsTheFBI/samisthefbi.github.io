@@ -72,13 +72,15 @@ const { title, description, image } = Astro.props
     });
 
   </script>
-  <body class="min-h-screen max-h-full bg-background pt-4 xl:pt-2">
+  <body class="min-h-screen max-h-full bg-background">
     <!--<Header />-->
+    <div class="h-32 lg:h-52 bg-gradient-to-b from-background via-background/15 to-transparent w-full z-50 fixed -mt-4 pointer-events-none"></div>
     <main class="flex main-height">
       <div class="mx-auto max-w-2xl p-4 w-full dark:text-stone-50/90">
         <slot />
       </div>
     </main>
     <Footer />
+    <div class="h-32 lg:h-52 bg-gradient-to-t from-background via-background/15 to-transparent w-full z-50 bottom-0 fixed pointer-events-none"></div>
   </body>
 </html>
