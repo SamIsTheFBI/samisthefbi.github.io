@@ -6,6 +6,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://samisthefbi.github.io",
   integrations: [react(), tailwind({
     applyBaseStyles: false
   }), icon()],
