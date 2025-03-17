@@ -100,6 +100,7 @@ import { ViewTransitions, fade } from "astro:transitions"
   </script>
   <body class="min-h-screen max-h-full bg-background mt-4">
     <!--<Header />-->
+    <div class="h-32 lg:h-52 bg-gradient-to-b from-background via-background/15 to-transparent w-full z-50 fixed -mt-4 pointer-events-none"></div>
     <main class="main-height p-2 max-w-7xl mx-auto pt-4 xl:pt-10" transition:name="weeb">
     <h1 class="text-2xl tracking-tight text-center text-muted-foreground">a few illustrations I recently liked.</h1>
     <center id="loading-text"><samp id="loading-text-actual">Loading...</samp></center>
@@ -107,5 +108,6 @@ import { ViewTransitions, fade } from "astro:transitions"
     </div>
     </main>
     <Footer />
+    <div class="h-32 lg:h-52 bg-gradient-to-t from-background via-background/15 to-transparent w-full z-50 bottom-0 fixed pointer-events-none"></div>
   </body>
 </html>
