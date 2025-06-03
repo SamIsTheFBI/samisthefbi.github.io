@@ -5,7 +5,7 @@ import { LuExternalLink } from "react-icons/lu";
 const { title, img, link } = Astro.props
 ---
 
-<div class="max-w-xs h-auto rounded-xl relative overflow-clip group drop-shadow-lg hover:drop-shadow-2xl contrast-100 hover:contrast-125">
+<div class="max-w-xs h-auto rounded-xl relative overflow-clip group drop-shadow-lg hover:drop-shadow-2xl hover:grayscale-0 hover:contrast-100 grayscale contrast-125">
   <Image src={img} height="360" width="640" alt={title} class="h-full w-full object-cover"/>
   <div class="w-full h-full absolute bg-gradient-to-t from-stone-950 via-transparent to-transparent bottom-0 hidden group-hover:block">
   </div>
