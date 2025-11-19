@@ -6,7 +6,7 @@ import { CiLocationOn, CiChat1 } from "react-icons/ci"
 import Munsoc from "@/assets/munsoc.png"
 import Watchmenu from "@/assets/watchmenu.png"
 import Stellarminesite from "@/assets/stellarminesite.png"
-import Mesuaferrea from "@/assets/mesuaferrea.png"
+import Ciphera from "@/assets/ciphera.png"
 
 import { MarqueeSkills } from "@/components/home/marquee-skills.tsx"
 
@@ -15,7 +15,7 @@ const title = "Home | SamIsTheFBI"
 
 <Base title={title} description="Fancy home page">
   <section class="sm:mt-5">
-    <a href="/about" class="text-2xl sm:text-4xl font-semibold tracking-tighter" transition:name="my_name">Shivam Shekhar Soy</a>
+    <a href="/about" class="text-5xl md:text-6xl font-serif" transition:name="my_name">Shivam Shekhar Soy</a>
     <p class="max-md:text-sm text-muted-foreground">software developer</p>
   </section>
   <section class="space-y-6 pt-3">
@@ -32,11 +32,36 @@ const title = "Home | SamIsTheFBI"
       </div>
     </div>
     <p>
-      I'm a 22yo CS undergrad. My interests lie in <span class="font-semibold">web development, UNIX-like systems, shell scripting</span> and <span class="font-semibold">drawing</span>.
+      I'm a 22yo CS undergrad. My interests lie in web development, UNIX-like systems and shell scripting.
     </p>
     <p>
       Beyond my studies, I enjoy participating in hackathons, working on various projects and ricing Linux. Aside from that, I do a little bit of sketching, watching movies, and playing video games.
     </p>
+  </section>
+  <section class="mt-8 space-y-4">
+      <div>
+        <h3 class="font-semibold text-lg sm:text-xl">Work Experience</h3>
+      </div>
+      <ul class="space-y-6">
+        <li class="group">
+          <div class="flex items-center justify-between">
+            <div class="flex">
+              <span class="group-hover:font-semibold transition-all">GNU Image Manipulation Program</span>
+            </div>
+            <span class="text-muted-foreground text-sm">May 2025 - Sept. 2025</span>
+          </div>
+          <span class="text-sm text-muted-foreground">Google Summer of Code 2025 Mentee</span>
+        </li>
+        <li class="group">
+          <div class="flex items-center justify-between">
+          <div class="flex">
+            <span class="group-hover:font-semibold transition-all animate-in animate-out ease-in-out delay-75">Kickoff Labs</span>
+          </div>
+            <span class="text-muted-foreground text-sm">Dec 2024 - May 2025</span>
+          </div>
+          <span class="text-sm text-muted-foreground">Fullstack Developer</span>
+        </li>
+      </ul>
   </section>
   <section class="mt-8 space-y-4">
       <div>
@@ -46,8 +71,16 @@ const title = "Home | SamIsTheFBI"
       <ul class="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2">
         <li>
           <ProjectCard 
+            title="Ciphera" 
+            description="Built a Matrix client app built with Flutter along with a separate backend for orgs to register users. 🥈 1st Runner-Up @ Ethos 2024." 
+            link="https://github.com/SamIsTheFBI/Lets-Chat"
+            img={Ciphera}
+          />
+        </li>
+        <li>
+          <ProjectCard 
             title="MUNSOC NIT Agartala" 
-            description="Maintaining the official website of MUN club of NIT Agartala. Built a full-fledged blog+CMS for student blogs." 
+            description="Maintained the official website of MUN club of NIT Agartala. Built a full-fledged blog+CMS for student blogs and handled event pages." 
             link="https://munsoc.in/"
             img={Munsoc}
           />
@@ -55,7 +88,7 @@ const title = "Home | SamIsTheFBI"
         <li>
           <ProjectCard 
             title="Stellar Minesite" 
-            description="ML-driven webapp that analyzes data on mining sites. Built during ISRO Space Hackathon NIT Agartala." 
+            description="ML-driven webapp that analyzes data on mining sites. 🥇 1st @ ISRO Space Hackathon, NIT Agartala." 
             link="https://stellar-minesite.vercel.app/"
             img={Stellarminesite}
           />
@@ -66,14 +99,6 @@ const title = "Home | SamIsTheFBI"
             description="Organize all of your movies and TV shows & watch them easily with this Bash script. Also supports YouTube." 
             link="https://github.com/SamIsTheFBI/watchmenu"
             img={Watchmenu}
-          />
-        </li>
-        <li>
-          <ProjectCard 
-            title="Mesua Ferrea" 
-            description="Full stack food ordering app with realtime order notification, order queue & inventory management." 
-            link="https://mesua-ferrea.vercel.app/"
-            img={Mesuaferrea}
           />
         </li>
       </ul>

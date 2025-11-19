@@ -7,6 +7,12 @@
   src: url("/Inter.ttf");
 }
 
+@font-face {
+  font-family: InstrumentSerif;
+  font-style: serif;
+  src: url("/InstrumentSerif-Regular.ttf");
+}
+
 :root {
   --header-height: 16px;
   --footer-height: 96px;

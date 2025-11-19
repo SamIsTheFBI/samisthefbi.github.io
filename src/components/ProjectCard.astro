@@ -4,11 +4,12 @@ import { Image } from 'astro:assets'
 const { title, description, link, img } = Astro.props
 ---
 
-<a href={link} target="_blank" class="rounded-md border space-y-3 h-full w-full 
+<a href={link} target="_blank" class="group rounded-md border space-y-3 h-full w-full 
   bg-card/55 text-card-foreground hover:bg-secondary/35 flex flex-col justify-between hover:shadow-lg">
+  <div class="overflow-clip">
     <Image 
       src={img}
-      class="object-cover aspect-[4 / 3] rounded-t-md" 
+      class="object-cover aspect-[4 / 3] rounded-t-md group-hover:scale-110 transition-all" 
       height={960} 
       width={1280}
       alt={title}
@@ -16,6 +17,7 @@ const { title, description, link, img } = Astro.props
       fetchpriority="high"
       decoding="async"
     />
+  </div>
   <div class="space-y-2 px-5 pb-3">
     <div class="flex justify-between items-center gap-1">
       <span class="font-bold">{title}</span>

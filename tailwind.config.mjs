@@ -16,7 +16,8 @@ export default {
         xs: '2px',
       },
       fontFamily: {
-        'sans': ['Inter', 'Helvetica', 'Arial', 'sans-serif']
+        'sans': ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
+        'serif': ['InstrumentSerif', 'Helvetica', 'Arial', 'sans-serif']
       },
       colors: {
         border: "hsl(var(--border))",
