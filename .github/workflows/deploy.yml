@@ -21,7 +21,7 @@ jobs:
       # Uses a pre-built Full TeX Live environment.
       # No need to list packages manually anymore.
       - name: Compile LaTeX
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: resume.tex
 
@@ -53,7 +53,7 @@ jobs:
       - name: Move PDF to Public folder
         run: |
           mkdir -p public
-          mv download_temp/test.pdf public/resume.pdf
+          mv download_temp/resume.pdf public/resume.pdf
           echo "PDF moved to public/resume.pdf"
 
       - name: Install, build, and upload your site
