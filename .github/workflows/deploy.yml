@@ -24,7 +24,7 @@ jobs:
         with:
           output_dir: output
           main_latex_file: resume.tex
-          ctan_packages: titlesec marvosym enumitem hyperref fancyhdr babel-english preprint tools graphics latexsym
+          ctan_packages: titlesec marvosym enumitem hyperref fancyhdr babel-english preprint tools graphics latexsym lua-uni-algos etoolbox xcolor
       
       # Upload the PDF so the next job can see it
       - name: Upload PDF artifact
