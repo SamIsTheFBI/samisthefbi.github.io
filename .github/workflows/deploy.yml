@@ -30,7 +30,7 @@ jobs:
         with:
           name: resume-artifact
           # Note: The file is now in the root, not 'output/'
-          path: test.pdf 
+          path: resume.pdf 
           if-no-files-found: error
 
   # JOB 2: Build the Astro Site (including the PDF)
