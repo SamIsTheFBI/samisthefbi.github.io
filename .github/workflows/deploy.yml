@@ -1,32 +1,68 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [ master ]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
 jobs:
+  # JOB 1: Compile the LaTeX PDF
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4 # Updated to v4
+      
+      - name: latex2pdf
+        id: compile-latex-document
+        uses: thomas-chauvet/latex2pdf-action@1.0.5
+        with:
+          output_dir: output
+          main_latex_file: resume.tex
+          ctan_packages: titlesec marvosym enumitem hyperref fancyhdr babel-english preprint tools graphics latexsym
+      
+      # Upload the PDF so the next job can see it
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-artifact
+          path: output/test.pdf
+          if-no-files-found: error
+
+  # JOB 2: Build the Astro Site (including the PDF)
   build:
+    needs: build_latex # <--- Waits for latex build to finish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+      
+      # Download the PDF generated in the previous job
+      - name: Download Resume PDF
+        uses: actions/download-artifact@v4
+        with:
+          name: resume-artifact
+          path: download_temp
+
+      # Move and Rename the file to public/resume.pdf
+      # In Astro, files in 'public' are moved to the root of the site build
+      - name: Move PDF to Public folder
+        run: |
+          mkdir -p public
+          mv download_temp/test.pdf public/resume.pdf
+          echo "PDF moved to public/resume.pdf"
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        # with:
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+        # The action will now build the site, and since resume.pdf is in /public,
+        # it will be included in the final deployment.
 
+  # JOB 3: Deploy to GitHub Pages
   deploy:
     needs: build
     runs-on: ubuntu-latest
