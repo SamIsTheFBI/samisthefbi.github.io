@@ -1,0 +1,224 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Shivam Shekhar Soy} \\ \vspace{1pt}
+    \small +91 79798 92527 $|$ \href{mailto:shivamshekharsoy@gmail.com}{\underline{shivamshekharsoy@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/shivam-shekhar-soy}{\underline{linkedin.com/in/shivam-shekhar-soy}} $|$
+    \href{https://github.com/samisthefbi}{\underline{github.com/samisthefbi}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Indian Institute of Information Technology Agartala}{Tripura}
+      {Bachelor of Technology in Computer Science \& Engineering}{2022 -- 2026}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Google Summer of Code 2025 Mentee}{May 2025 -- Sep. 2025}
+      {GNU Image Manipulation Program}{Remote}
+      \resumeItemListStart
+        \resumeItem{Contributed to the development of a new website for GIMP’s extension platform}
+        \resumeItem{Implemented GitLab CI pipelines to automate extension validation and metadata page generation}
+        \resumeItem{Built the site with Hugo, delivering a secure, maintainable static site with essential dynamic components}
+      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \resumeSubheading
+      {Software Developer Intern}{Dec. 2024 -- May 2025}
+      {Kickoff}{Remote}
+      \resumeItemListStart
+        \resumeItem{Built a production-ready unified dashboard from multiple POCs using React.js, React Hooks, reusable components, and Tailwind CSS.}
+        \resumeItem{Integrated Gong via REST APIs to fetch and sync conference call data with scalable state management.}
+        \resumeItem{Managed CI/CD pipelines and deployments on DigitalOcean, using npm and modern build tools.}
+        \resumeItem{Added frontend tests with Vitest + React Testing Library and backend tests with Pytest.}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/samisthefbi/semantic-image-search}{Semantic Image Search}} $|$ \emph{ Sentence Transformers, Vector Embeddings, Google GenAI SDK}}{Nov. 2025}
+          \resumeItemListStart
+            \resumeItem{Developed a multimodal search system capable of retrieving local images via natural language queries by leveraging Vision Language Models for content understanding.}
+            \resumeItem{Created a modular plugin system for AI providers, allowing seamless switching between local (Ollama) and cloud (Gemini) inference engines via configuration files}
+            \resumeItem{Implemented RAG-like architecture by generating vector embeddings (via all-MiniLM-L6-v2) from AI-generated descriptions and storing them in LanceDB to manage high-dimensional vector data, optimizing storage efficiency for local deployment}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/samisthefbi/lets-chat}{Ciphera - Secure Messaging App}} $|$ \emph{Flutter, Matrix, Synapse, Hive, Dio}}{Oct. 2024}
+          \resumeItemListStart
+            \resumeItem{Created a Flutter-based multi-platform messaging app during Ethos 2024, awarded 1st Runner-Up position}
+            \resumeItem{Coordinated frontend and backend components to enable robust, realtime chat functionality using Matrix protocol}
+            \resumeItem{Designed and implemented the registration backend, integrating with a Synapse server to support secure account creation and authentication}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/samisthefbi/stellar-minesite}{Stellar Minesite}} $|$ \emph{Machine Learning, Python, Streamlit, Numpy, Scikit, Tensorflow, Pandas, Reactjs}}{Aug. 2024}
+          \resumeItemListStart
+            \resumeItem{Developed an ML-driven web platform for mining site data analysis and generating recommendations; Winner of ISRO Space Hackathon, NIT Agartala}
+            \resumeItem{Predicting efficient, sustainable sites using a Random Forest classifier model}
+            \resumeItem{User-friendly interface using Streamlit to allow users to interactively customize their mining site preferences and view ranked recommendations}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://www.munsoc.in/}{MUNSOC Website}} $|$ \emph{Nextjs, ShadcnUI, TailwindCSS, Zustand, DrizzleORM, Postgres, Typescript}}{April 2024}
+          \resumeItemListStart
+            \resumeItem{Developed a full-stack blog and CMS for the MUN club of NIT Agartala}
+            \resumeItem{Increased page impressions with a beautifully designed blog, catering to over 100+ active members}
+            \resumeItem{Implemented a custom rich-text editor and admin approval system with reusable components and streamlined state management (Context API/Zustand).}
+            \resumeItem{Used Git/GitHub and browser DevTools for version control, debugging, and maintainable development workflows.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, C/C++, SQL, JavaScript, TypeScript, HTML/CSS, Bash, Go} \\
+     \textbf{Frameworks}{: React.js, Nextjs Node.js, Flask, Django Rest Framework} \\
+     \textbf{Developer Tools}{: Docker, Git, Postman, Linux, Figma} \\
+     \textbf{Relevant Coursework}{: Data Structures and Algorithms, Operating Systems, Object Oriented Programming, Database Management System, System Design}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+
+%\section{Coding Profiles}
+% \begin{itemize}[leftmargin=0.15in, label={}]
+%    \small{\item{
+%     \textbf{Leetcode}{: \href{https://leetcode.com/u/samisthefbi/}{samisthefbi} (Max. Contest Rating: 1689)} \\
+%     \textbf{Codeforces}{: \href{https://codeforces.com/profile/samisthefbi}{samisthefbi} (Max. Contest Rating: 932)}
+%    }}
+% \end{itemize}
+
+\end{document}
