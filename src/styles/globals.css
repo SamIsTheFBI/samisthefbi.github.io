@@ -18,6 +18,11 @@
   --footer-height: 96px;
 }
 
+html {
+  scroll-padding: var(--header-height);
+  scroll-behavior: smooth;
+}
+
 .main-height {
   min-height: calc(100dvh - var(--footer-height) - var(--header-height));
 }

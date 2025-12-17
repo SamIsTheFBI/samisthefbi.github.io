@@ -2,6 +2,7 @@
 import Base from "@/layouts/Base.astro"
 import ProjectCard from "@/components/ProjectCard.astro"
 import { CiLocationOn, CiChat1 } from "react-icons/ci"
+import { LuArrowUpRight } from "react-icons/lu";
 
 import Munsoc from "@/assets/munsoc.png"
 import Watchmenu from "@/assets/watchmenu.png"
@@ -27,46 +28,53 @@ const title = "Home | SamIsTheFBI"
         <CiChat1 size={20}/>
         <p>
           <a href="https://x.com/samisthefbi" target="_blank" class="link font-normal">Twitter/X</a>,
-          <a href="mailto:shivamshekharsoy@gmail.com" target="_blank" class="link font-normal">Email</a>
+          <a href="mailto:shivamshekharsoy@gmail.com" target="_blank" class="link font-normal">Email</a>,
+          <a href="https://www.linkedin.com/in/shivam-shekhar-soy/" target="_blank" class="link font-normal">LinkedIn</a>
         </p>
       </div>
     </div>
-    <p>
-      I'm a 22yo CS undergrad. My interests lie in web development, UNIX-like systems and shell scripting.
-    </p>
-    <p>
-      Beyond my studies, I enjoy participating in hackathons, working on various projects and ricing Linux. Aside from that, I do a little bit of sketching, watching movies, and playing video games.
+    <p class="text-sm text-pretty">
+I'm a 22yo CS undergrad. My interests lie in web dev, UNIX-like systems and shell scripting. Beyond my studies, I enjoy participating in hackathons, working on various projects and ricing Linux. Aside from that, I do a little bit of sketching, watching movies, and playing video games.
     </p>
   </section>
   <section class="mt-8 space-y-4">
       <div>
-        <h3 class="font-semibold text-lg sm:text-xl">Work Experience</h3>
+      <h3 id="experience" class="font-semibold text-lg sm:text-xl text-muted-foreground">
+        <a href="#experience">Work Experience</a>
+      </h3>
       </div>
-      <ul class="space-y-6">
+      <ul class="space-y-5">
         <li class="group">
-          <div class="flex items-center justify-between">
-            <div class="flex">
-              <span class="group-hover:font-semibold transition-all">GNU Image Manipulation Program</span>
+          <a href="https://summerofcode.withgoogle.com/programs/2025/projects/4I53AOAO">
+            <div class="flex items-center justify-between">
+              <div class="flex">
+                <span class="group-hover:text-primary transition-all animate-in animate-out ease-in-out delay-75 text-sm font-semibold">GNU Image Manipulation Program</span>
+                <LuArrowUpRight className="group-hover:text-primary text-background transition-all animate-in animate-out ease-in-out delay-75"/>
+              </div>
+              <span class="text-muted-foreground text-xs">May 2025 - Sept. 2025</span>
             </div>
-            <span class="text-muted-foreground text-sm">May 2025 - Sept. 2025</span>
-          </div>
-          <span class="text-sm text-muted-foreground">Google Summer of Code 2025 Mentee</span>
+            <span class="text-sm text-muted-foreground">Google Summer of Code 2025 Mentee</span>
+          </a>
         </li>
         <li class="group">
-          <div class="flex items-center justify-between">
-          <div class="flex">
-            <span class="group-hover:font-semibold transition-all animate-in animate-out ease-in-out delay-75">Kickoff Labs</span>
-          </div>
-            <span class="text-muted-foreground text-sm">Dec 2024 - May 2025</span>
-          </div>
-          <span class="text-sm text-muted-foreground">Fullstack Developer</span>
+          <a href="https://letskickoff.com/">
+            <div class="flex items-center justify-between">
+            <div class="flex">
+              <span class="group-hover:text-primary transition-all animate-in animate-out ease-in-out delay-75 text-sm font-semibold">Kickoff Labs</span>
+              <LuArrowUpRight className="group-hover:text-primary text-background transition-all animate-in animate-out ease-in-out delay-75"/>
+            </div>
+              <span class="text-muted-foreground text-xs">Dec 2024 - May 2025</span>
+            </div>
+            <span class="text-sm text-muted-foreground">Fullstack Developer</span>
+          </a>
         </li>
       </ul>
   </section>
   <section class="mt-8 space-y-4">
       <div>
-        <h3 class="font-semibold text-lg sm:text-xl">Projects</h3>
-        <p class="max-md:text-sm text-muted-foreground">a glimpse what I can build.</p>
+        <h3 id="projects" class="font-semibold text-lg sm:text-xl text-muted-foreground">
+          <a href="#projects">Projects</a>
+        </h3>
       </div>
       <ul class="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2">
         <li>
@@ -105,13 +113,14 @@ const title = "Home | SamIsTheFBI"
   </section>
   <section class="mt-8 space-y-4">
     <div>
-      <h2 class="text-lg sm:text-xl font-semibold">Hire me</h2>
-      <p class="max-md:text-sm text-muted-foreground">if you need a skilled developer.</p>
+      <h3 id="hire-me" class="font-semibold text-lg sm:text-xl text-muted-foreground">
+        <a href="#hire-me">Hire me</a>
+      </h3>
     </div>
     <div class="max-w-xs sm:max-w-2xl overflow-hidden mx-auto h-40">
       <MarqueeSkills client:only="react" />
     </div>
-    <p>
+    <p class="text-sm">
       Always on a lookout for an opportunity to work on exciting projects. I am open to both full-time and part-time roles. You can contact me preferably through my email and X/Twitter account.
     </p>
     <p class="hidden">
