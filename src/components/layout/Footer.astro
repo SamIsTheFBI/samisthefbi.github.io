@@ -4,13 +4,31 @@ import Links from "@/components/home/Links.astro"
 
 <footer class="overflow-hidden h-24 sticky top-0 z-50 w-full text-sm">
   <div class="max-w-2xl w-full mx-auto px-4 flex h-20 items-center justify-between">
-    <div class="flex gap-6 md:gap-10">
-      <a href="/" class="flex items-center space-x-2">
-        <span class="inline-block font-bold tracking-tighter text-muted-foreground">Shivam.</span>
-      </a>
+    <div class="">
+      <a href="/" class="inline-block font-bold tracking-tighter text-muted-foreground">Shivam.</a><br />
+      <a target="_blank" id="steam-presence" class="text-xs"></span>
     </div>
     <div class="flex gap-2 text-lg">
       <Links />
     </div>
   </div>
 </footer>
+  <script>
+    fetch("https://steam-stats-silk.vercel.app/api/steam/presence")
+      .then(res => res.json())
+      .then(data => {
+        if(data.activity) {
+          document.getElementById("steam-presence").textContent =
+            "Playing " + data.activity.name + " on Steam rn."
+          document.getElementById("steam-presence").href = "https://steamcommunity.com/id/samisthefbi/"
+        } else if (data.status === "Online") {
+          document.getElementById("steam-presence").href = "https://steamcommunity.com/id/samisthefbi/"
+          document.getElementById("steam-presence").textContent =
+            "Active on Steam rn."
+        }
+      })
+      .catch(err => {
+        console.error("no element with id=steam-presence")
+      });
+  </script>
+
