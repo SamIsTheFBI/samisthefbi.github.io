@@ -17,18 +17,18 @@ import Links from "@/components/home/Links.astro"
     fetch("https://steam-stats-silk.vercel.app/api/steam/presence")
       .then(res => res.json())
       .then(data => {
+        const steamElem = document.getElementById("steam-presence") as HTMLAnchorElement | null;
+        if(!(steamElem instanceof HTMLAnchorElement)) return 
+
         if(data.activity) {
-          document.getElementById("steam-presence").textContent =
-            "Playing " + data.activity.name + " on Steam rn."
-          document.getElementById("steam-presence").href = "https://steamcommunity.com/id/samisthefbi/"
+          steamElem.href = "https://steamcommunity.com/id/samisthefbi/"
+          steamElem.textContent = "Playing " + data.activity.name + " on Steam rn."
         } else if (data.status === "Online") {
-          document.getElementById("steam-presence").href = "https://steamcommunity.com/id/samisthefbi/"
-          document.getElementById("steam-presence").textContent =
-            "Active on Steam rn."
+          steamElem.href = "https://steamcommunity.com/id/samisthefbi/"
+          steamElem.textContent = "Active on Steam rn."
         }
       })
       .catch(err => {
         console.error("no element with id=steam-presence")
       });
   </script>
-
