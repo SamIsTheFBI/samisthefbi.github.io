@@ -34,7 +34,7 @@ const title = "Home | SamIsTheFBI"
       </div>
     </div>
     <p class="text-sm text-pretty">
-      I'm a 22yo CS undergrad. My interests lie in web dev, UNIX-like systems and shell scripting. Aside from that, I do a little bit of sketching, watching movies, and playing video games.
+      I'm a 22yo CS undergrad. My interests lie in web dev, UNIX-like systems and shell scripting. Aside from that, I do a little bit of sketching, watching movies, and <a id="last-played-link" target="_blank" href="#" data-tooltip="Last played: ...">playing video games</a>.
     </p>
   </section>
   <section class="mt-8 space-y-4">
@@ -65,7 +65,7 @@ const title = "Home | SamIsTheFBI"
             </div>
               <span class="text-muted-foreground text-xs">Dec 2024 - May 2025</span>
             </div>
-            <span class="text-sm text-muted-foreground">Fullstack Developer</span>
+            <span class="text-sm text-muted-foreground">Fullstack Intern</span>
           </a>
         </li>
       </ul>
@@ -134,4 +134,19 @@ const title = "Home | SamIsTheFBI"
       <a class="group-hover:opacity-100 opacity-0 hover:underline absolute bottom-3 uppercase transition-all text-xs sm:text-xl text-white translate-x-1/2 right-1/2 font-semibold" href="/resume.pdf" target="_blank">Download my resume ↗</a>
     </div>
   </section>
+
+  <script>
+    const link = document.getElementById("last-played-link") as HTMLAnchorElement | null
+    if (link) {
+      fetch("https://steam-stats-silk.vercel.app/api/steam/games/recent")
+        .then(r => r.json())
+        .then(data => {
+          link.setAttribute("data-tooltip", `Last played: ${data.name}`)
+          link.href = data.steam_store_url
+        })
+        .catch(() => {
+          link.setAttribute("data-tooltip", "Last played: unknown")
+        })
+    }
+  </script>
 </Base>

@@ -139,3 +139,45 @@ html {
     @apply font-medium underline underline-offset-4 hover:decoration-primary decoration-primary/50
   }
 }
+
+[data-tooltip] { position: relative; }
+
+[data-tooltip]::before,
+[data-tooltip]::after {
+  position: absolute;
+  inset-inline-start: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 150ms, transform 150ms, visibility 150ms;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  inset-block-end: calc(100% + 10px);
+  transform: translate(-50%) translateY(4px);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+  background: hsl(var(--foreground));
+  color: hsl(var(--background));
+  border-radius: 0.25rem;
+}
+
+[data-tooltip]::before {
+  content: "";
+  inset-block-end: calc(100% - 5px);
+  transform: translate(-50%) translateY(4px);
+  border: 8px solid transparent;
+  border-top-color: hsl(var(--foreground));
+}
+
+[data-tooltip]:is(:hover, :focus-visible)::before,
+[data-tooltip]:is(:hover, :focus-visible)::after {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.7s;
+  transform: translate(-50%) translateY(0);
+}
