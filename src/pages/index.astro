@@ -150,7 +150,10 @@ const title = "Home | SamIsTheFBI"
   <script>
     const link = document.getElementById("last-played-link") as HTMLAnchorElement | null
     if (link) {
-      fetch("https://steam-stats-silk.vercel.app/api/steam/games/recent")
+      const steamDataUrl = window.location.hostname === "localhost"
+        ? "/steam-data.json"
+        : "https://raw.githubusercontent.com/SamIsTheFBI/samisthefbi.github.io/master/public/steam-data.json"
+      fetch(steamDataUrl)
         .then(r => r.json())
         .then(data => {
           link.setAttribute("data-tooltip", `Last played: ${data.name}`)
