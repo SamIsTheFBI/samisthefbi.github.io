@@ -133,13 +133,21 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Software Engineering Intern}{Feb. 2026 -- Present}
-      {Inkle}{Bengaluru, India}
+      {Software Engineering Intern}{Feb. 2026 -- July 2026}
+      {Inkle}{Bangalore, Karnataka, India}
       \resumeItemListStart
-        \resumeItem{Engineered full-stack features across React and Django, merging 71 PRs in 3 months on a production B2B SaaS serving US businesses for accounting, bookkeeping, and tax compliance.}
-        \resumeItem{Redesigned the end-to-end customer sign-up flow - entity type selection, conditional state/country fields, and URL routing — reducing onboarding drop-off for new users.}
-        \resumeItem{Built a timed broadcast banner system and auto-agent assignment for the ops dashboard as full-stack features (Django REST + React), improving real-time customer communication.}
-        \resumeItem{Enhanced filings tracker with group-based sorting, sticky UI, and configurable CSV exports; migrated PDF generation to WeasyPrint, resolving cross-document layout inconsistencies.}
+        \resumeItem{Contributed across the full stack (React/TypeScript, Django) on a production B2B SaaS for US startup tax compliance, shipping features end-to-end from design to deployment.
+}
+        \resumeItem{Built and maintained the 1120 tax tracker end-to-end; priority scoring with a daily
+  Celery cron for time-sensitive recomputation, books-status validation gates, urgent-flag
+  Slack alerts, and sortable/filterable ops and client-facing views.}
+        \resumeItem{Automated IRS AcroForm generation for Forms 8802 and 8822-B using a generic
+  pypdf-based PDFFormHandler with a debug-fill mode to reverse-engineer field mappings;
+  migrated HTML-templated document generation to WeasyPrint.}
+        \resumeItem{Extended ops agent auto-assignment with timezone-aware overlap logic (minute-set
+  intersection to handle midnight-crossing shifts) and a configurable excluded-agent list
+  with a load-balanced fallback.
+}
       \resumeItemListEnd
 
     \resumeSubheading
