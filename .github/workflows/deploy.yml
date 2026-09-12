@@ -11,20 +11,18 @@ permissions:
   id-token: write
 
 jobs:
-  # JOB 1: Check if LaTeX files changed
+  # Check whether the resume needs rebuilding
   changes:
     runs-on: ubuntu-latest
     outputs:
       latex: ${{ steps.check.outputs.latex }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 2
 
-      - name: Check for LaTeX changes
-        id: check
+      - id: check
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "latex=true" >> "$GITHUB_OUTPUT"
@@ -34,22 +32,21 @@ jobs:
             echo "latex=false" >> "$GITHUB_OUTPUT"
           fi
 
-  # JOB 2: Only rebuild PDF when LaTeX changed
+  # Only runs when LaTeX changed
   build_latex:
     needs: changes
     if: needs.changes.outputs.latex == 'true'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v4
         with:
           root_file: resume.tex
 
-      - name: Update PDF in repository
+      - name: Update PDF
         run: |
           mkdir -p public
           cp resume.pdf public/resume.pdf
@@ -66,20 +63,18 @@ jobs:
             git push
           fi
 
-  # JOB 3: ALWAYS build Astro
+  # ALWAYS build Astro
   build:
-    needs: [changes, build_latex]
-    if: always() && needs.changes.result == 'success' && needs.build_latex.result != 'failure' && needs.build_latex.result != 'cancelled'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build Astro site
+      - name: Build Astro
         uses: withastro/action@v3
 
-  # JOB 4: Deploy to GitHub Pages
+  # ALWAYS deploy
   deploy:
     needs: build
     runs-on: ubuntu-latest
