@@ -6,64 +6,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 jobs:
-  # Check whether the resume needs rebuilding
-  changes:
-    runs-on: ubuntu-latest
-    outputs:
-      latex: ${{ steps.check.outputs.latex }}
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
-      - id: check
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "latex=true" >> "$GITHUB_OUTPUT"
-          elif git diff --name-only HEAD^ HEAD | grep -qE '\.(tex|sty|bib)$'; then
-            echo "latex=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "latex=false" >> "$GITHUB_OUTPUT"
-          fi
-
-  # Only runs when LaTeX changed
-  build_latex:
-    needs: changes
-    if: needs.changes.outputs.latex == 'true'
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Compile LaTeX
-        uses: xu-cheng/latex-action@v4
-        with:
-          root_file: resume.tex
-
-      - name: Update PDF
-        run: |
-          mkdir -p public
-          cp resume.pdf public/resume.pdf
-
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add public/resume.pdf
-
-          if git diff --staged --quiet; then
-            echo "PDF unchanged"
-          else
-            git commit -m "chore: update resume.pdf [skip ci]"
-            git push
-          fi
-
-  # ALWAYS build Astro
   build:
     runs-on: ubuntu-latest
 
@@ -71,10 +18,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: resume.tex
+
+      - name: Put compiled resume in the site
+        run: |
+          mkdir -p public
+          cp resume.pdf public/resume.pdf
+
       - name: Build Astro
         uses: withastro/action@v3
 
-  # ALWAYS deploy
   deploy:
     needs: build
     runs-on: ubuntu-latest
