@@ -87,6 +87,10 @@ import { ViewTransitions, fade } from "astro:transitions"
           let img = document.createElement("img")
           img.src = source
           img.alt = alt
+          img.style.opacity = '0'
+          img.style.transform = 'translateY(12px)'
+          img.style.transition = 'opacity 0.4s ease, transform 0.4s ease'
+          img.onload = function() { this.style.opacity = '1'; this.style.transform = 'translateY(0)' }
           gallery.appendChild(img)
         })
         document.getElementById("loading-text").remove()
@@ -102,7 +106,7 @@ import { ViewTransitions, fade } from "astro:transitions"
     <!--<Header />-->
     <div class="h-32 lg:h-52 bg-gradient-to-b from-background via-background/15 to-transparent w-full z-50 fixed -mt-4 pointer-events-none"></div>
     <main class="main-height p-2 max-w-7xl mx-auto pt-4 xl:pt-10" transition:name="weeb">
-    <h1 class="text-2xl tracking-tight text-center text-muted-foreground">a few illustrations I recently liked.</h1>
+    <h1 class="text-2xl tracking-tight text-center text-muted-foreground animate-entrance">a few illustrations I recently liked.</h1>
     <center id="loading-text"><samp id="loading-text-actual">Loading...</samp></center>
     <div id="gallery" class="mt-5 columns-1 gap-2 lg:gap-3 sm:columns-2 lg:columns-3 xl:columns-4 [&>img:not(:first-child)]:mt-2 lg:[&>img:not(:first-child)]:mt-3">
     </div>

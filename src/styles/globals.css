@@ -60,7 +60,96 @@ html {
 		opacity: 1;
 	}
 }
- 
+
+@keyframes entrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(8px);
+  }
+}
+
+@keyframes scrollReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-entrance {
+  animation: entrance 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-hero {
+  animation: heroEntrance 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.stagger-1 { animation-delay: 50ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 150ms; }
+.stagger-4 { animation-delay: 190ms; }
+.stagger-5 { animation-delay: 230ms; }
+.stagger-6 { animation-delay: 270ms; }
+.stagger-7 { animation-delay: 310ms; }
+
+.stagger-grid > :nth-child(1) { animation-delay: 150ms; }
+.stagger-grid > :nth-child(2) { animation-delay: 210ms; }
+.stagger-grid > :nth-child(3) { animation-delay: 270ms; }
+.stagger-grid > :nth-child(4) { animation-delay: 330ms; }
+.stagger-grid > :nth-child(5) { animation-delay: 390ms; }
+.stagger-grid > :nth-child(6) { animation-delay: 450ms; }
+.stagger-grid > :nth-child(7) { animation-delay: 510ms; }
+
+@supports (animation-timeline: view()) {
+  .scroll-reveal {
+    animation: scrollReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+}
+
+@media not all and (hover: hover) and (pointer: fine) {
+  .group:hover .group-hover\:translate-x-0\.5 {
+    --tw-translate-x: 0;
+  }
+  .group:hover .group-hover\:-translate-y-0\.5 {
+    --tw-translate-y: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-entrance,
+  .animate-hero {
+    animation: entrance 0.2s ease both !important;
+    filter: none !important;
+  }
+  .animate-hero {
+    animation-name: entrance !important;
+  }
+  .scroll-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .stagger-1, .stagger-2, .stagger-3, .stagger-4,
+  .stagger-5, .stagger-6, .stagger-7 {
+    animation-delay: 0ms !important;
+  }
+  .stagger-grid > * {
+    animation-delay: 0ms !important;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 98.04%;
@@ -136,7 +225,8 @@ html {
     @apply bg-secondary-foreground/65 text-secondary
   }
   .link {
-    @apply font-medium underline underline-offset-4 hover:decoration-primary decoration-primary/50
+    @apply font-medium underline underline-offset-4 hover:decoration-primary decoration-primary/50;
+    transition: text-decoration-color 200ms ease;
   }
 }
 

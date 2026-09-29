@@ -14,15 +14,15 @@ const title = "Anime | SamIsTheFBI"
 
 <Base title={title} description="Oh the weeb trash that I am">
   <section class="sm:mt-5">
-    <h2 transition:name="anime_title" class="text-xl sm:text-2xl font-semibold tracking-tighter opacity-95">Anime</h2>
-    <p class="max-md:text-sm text-muted-foreground">oh the weeb trash that i am.</p>
+    <h2 transition:name="anime_title" class="text-xl sm:text-2xl font-semibold tracking-tighter animate-entrance">Anime</h2>
+    <p class="max-md:text-sm text-muted-foreground animate-entrance stagger-1">oh the weeb trash that i am.</p>
   </section>
   <section class="space-y-6 pt-6">
-    <p class="text-pretty">
+    <p class="text-pretty text-sm animate-entrance stagger-2">
     I have watched anime since childhood thanks to Animax still alive on Indian TVs at the time. I can&apos;t remember my first anime but Idaten Jump & Eureka Seven AO were some of the first few ones I was very fond of, even though I missed the ending of the former and almost half of the latter. There was Doraemon, Shinchan, Kochikame and whatnot before that but I didn&apos;t know cartoon from anime that time. With no IRL friends to talk about it, I used to be very active on Facebook for anime discussion, shitposts and news. Since then I&apos;ve liked all kinds of anime, but I still cannot see how to enjoy sports anime. Here are some anime series/movies which changed how I viewed this media.
     </p>
   </section>
-  <section class="pt-8 gap-6 grid sm:grid-cols-2">
+  <section class="pt-8 gap-6 grid sm:grid-cols-2 stagger-grid">
     <AnimeCard img={Monogatari} title="Monogatari Series" link="https://myanimelist.net/anime/5081/Bakemonogatari"/>
     <AnimeCard img={Flcl} title="FLCL (2000)" link="https://myanimelist.net/anime/227/FLCL"/>
     <AnimeCard img={Drrr} title="Durarara!!" link="https://myanimelist.net/anime/6746/Durarara"/>

@@ -1,0 +1,47 @@
+---
+import { LuArrowUpRight, LuMedal } from "react-icons/lu";
+
+interface Props {
+    name: string;
+    href: string;
+    description: string;
+    award?: string;
+    meta?: string;
+}
+
+const { name, href, description, award, meta } = Astro.props;
+---
+
+<li class="group relative">
+    <a href={href} target="_blank" class="block">
+        <LuArrowUpRight
+            className="absolute -left-5 text-muted-foreground opacity-100 sm:opacity-0 sm:group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-[opacity,transform] ease"
+            size={14}
+            style={{ top: "5px" }}
+        />
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <span class="group-hover:text-primary transition-colors ease text-sm font-semibold">
+                    {name}
+                </span>
+                {award && (
+                    <span class="group/award inline-flex items-center ml-1.5">
+                        <LuMedal
+                            className="text-muted-foreground shrink-0"
+                            size={14}
+                        />
+                        <span class="overflow-hidden max-w-0 opacity-0 group-hover/award:max-w-48 group-hover/award:opacity-100 transition-[max-width,opacity] duration-300 ease-out text-xs text-muted-foreground whitespace-nowrap ml-1">
+                            {award}
+                        </span>
+                    </span>
+                )}
+            </div>
+            {meta && (
+                <span class="overflow-hidden opacity-100 max-w-48 transition-[max-width,opacity] duration-300 ease-out text-muted-foreground text-xs whitespace-nowrap">
+                    {meta}
+                </span>
+            )}
+        </div>
+        <span class="text-sm text-muted-foreground">{description}</span>
+    </a>
+</li>

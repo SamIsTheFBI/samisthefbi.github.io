@@ -5,15 +5,15 @@ import { LuExternalLink } from "react-icons/lu";
 const { title, img, link } = Astro.props
 ---
 
-<div class="max-w-xs h-auto rounded-xl relative overflow-clip group drop-shadow-lg hover:drop-shadow-2xl hover:grayscale-0 hover:contrast-100 grayscale contrast-125">
+<div class="max-w-xs h-auto rounded-xl relative overflow-clip group drop-shadow-lg hover:drop-shadow-2xl hover:grayscale-0 hover:contrast-100 grayscale contrast-125 animate-entrance transition-[filter,drop-shadow] duration-300 ease">
   <Image src={img} height="360" width="640" alt={title} class="h-full w-full object-cover"/>
-  <div class="w-full h-full absolute bg-gradient-to-t from-stone-950 via-transparent to-transparent bottom-0 hidden group-hover:block">
+  <div class="w-full h-full absolute bg-gradient-to-t from-stone-950 via-transparent to-transparent bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
   </div>
-  <div class="font-bold p-3 text-xl absolute bottom-0 w-full tracking-tighter text-white items-center justify-between text-wrap hidden group-hover:flex">
+  <div class="font-bold p-3 text-xl absolute bottom-0 w-full tracking-tighter text-white items-center justify-between text-wrap flex opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-[opacity,transform] duration-300">
     {title}
     {
       link &&
-        <div class="hidden group-hover:block cursor-pointer">
+        <div class="cursor-pointer">
           <a href={link} target="_blank">
             <LuExternalLink/>
           </a>

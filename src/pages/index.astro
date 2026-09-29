@@ -1,16 +1,8 @@
 ---
 import Base from "@/layouts/Base.astro";
-import ProjectCard from "@/components/ProjectCard.astro";
-import { CiLocationOn, CiChat1 } from "react-icons/ci";
-import { LuArrowUpRight } from "react-icons/lu";
-
-import Munsoc from "@/assets/munsoc.png";
-import Watchmenu from "@/assets/watchmenu.png";
-import Stellarminesite from "@/assets/stellarminesite.png";
-import Ciphera from "@/assets/ciphera.png";
-import Mnemosyne from "@/assets/mnemosyne.png";
-
-import { MarqueeSkills } from "@/components/home/marquee-skills.tsx";
+import ProjectItem from "@/components/home/ProjectItem.astro";
+import { LuArrowUpRight, LuCopy, LuCheck, LuGithub } from "react-icons/lu";
+import { RiTwitterXFill } from "react-icons/ri";
 
 const title = "Home | SamIsTheFBI";
 ---
@@ -19,209 +11,208 @@ const title = "Home | SamIsTheFBI";
     <section class="sm:mt-5">
         <a
             href="/about"
-            class="text-5xl md:text-6xl font-serif"
+            class="text-5xl md:text-6xl font-serif animate-hero"
             transition:name="my_name"
         >
             Shivam Shekhar Soy
         </a>
-        <p class="max-md:text-sm text-muted-foreground">software developer</p>
+        <p class="max-md:text-sm text-muted-foreground animate-entrance stagger-1">
+            software developer
+        </p>
     </section>
     <section class="space-y-6 pt-3">
-        <div class="space-y-1">
-            <p class="flex gap-2 items-center">
-                <CiLocationOn size={20} /> Jharkhand, India
-            </p>
-            <div class="flex gap-2 items-center">
-                <CiChat1 size={20} />
-                <p>
-                    <a
-                        href="https://x.com/samisthefbi"
-                        target="_blank"
-                        class="link font-normal"
-                    >
-                        Twitter/X
-                    </a>
-                    ,
-                    <a
-                        href="mailto:shivamshekharsoy@gmail.com"
-                        target="_blank"
-                        class="link font-normal"
-                    >
-                        Email
-                    </a>
-                    ,
-                    <a
-                        href="https://www.linkedin.com/in/shivam-shekhar-soy/"
-                        target="_blank"
-                        class="link font-normal"
-                    >
-                        LinkedIn
-                    </a>
-                </p>
-            </div>
-        </div>
-        <p class="text-sm text-pretty">
-            I'm a 23yo CS undergrad. My interests lie in web dev, UNIX-like
-            systems and shell scripting. Lately, I've been playing around with
-            LLMs as well. Aside from that, I do a little bit of sketching,
-            watching movies, and playing video games.
+        <p class="text-sm text-pretty animate-entrance stagger-3">
+            Hey I'm Shivam, I go by <i>SamIsTheFBI</i> online. I'm into webdev,
+            systems & lately, I've been fooling around with AI agents. Aside
+            from that, I do a little bit of sketching, watching movies, and
+            playing video games.
         </p>
     </section>
     <section class="mt-8 space-y-4">
-        <div>
+        <div class="animate-entrance stagger-4 flex items-center gap-4">
             <h3
                 id="experience"
-                class="font-semibold text-lg sm:text-xl text-muted-foreground"
+                class="font-semibold text-lg sm:text-xl text-muted-foreground shrink-0"
             >
                 <a href="#experience">Work Experience</a>
             </h3>
+            <hr class="border-border w-full" />
         </div>
         <ul class="space-y-5">
-            <li class="group">
-                <a href="https://inkle.ai/" target="_blank">
-                    <div class="flex items-center justify-between">
-                        <div class="flex">
-                            <span class="group-hover:text-primary transition-all animate-in animate-out ease-in-out delay-75 text-sm font-semibold">
-                                Inkle
-                            </span>
-                            <LuArrowUpRight className="group-hover:text-primary text-background transition-all animate-in animate-out ease-in-out delay-75" />
-                        </div>
-                        <span class="text-muted-foreground text-xs">
-                            Feb '26 - Jul '26
-                        </span>
-                    </div>
-                    <span class="text-sm text-muted-foreground">
-                        Software Engineer Intern
-                    </span>
-                </a>
-            </li>
-            <li class="group">
-                <a
+            <div class="animate-entrance stagger-5">
+                <ProjectItem
+                    name="Inkle"
+                    href="https://inkle.ai/"
+                    description="engg"
+                    meta="2026"
+                />
+            </div>
+            <div class="animate-entrance stagger-6">
+                <ProjectItem
+                    name="GNU Image Manipulation Program"
                     href="https://summerofcode.withgoogle.com/programs/2025/projects/4I53AOAO"
-                    target="_blank"
-                >
-                    <div class="flex items-center justify-between">
-                        <div class="flex">
-                            <span class="group-hover:text-primary transition-all animate-in animate-out ease-in-out delay-75 text-sm font-semibold">
-                                GNU Image Manipulation Program
-                            </span>
-                            <LuArrowUpRight className="group-hover:text-primary text-background transition-all animate-in animate-out ease-in-out delay-75" />
-                        </div>
-                        <span class="text-muted-foreground text-xs">
-                            May - Sept. '25
-                        </span>
-                    </div>
-                    <span class="text-sm text-muted-foreground">
-                        GSoC'25 Mentee
-                    </span>
-                </a>
-            </li>
-            <li class="group">
-                <a href="https://letskickoff.com/" target="_blank">
-                    <div class="flex items-center justify-between">
-                        <div class="flex">
-                            <span class="group-hover:text-primary transition-all animate-in animate-out ease-in-out delay-75 text-sm font-semibold">
-                                Kickoff Labs
-                            </span>
-                            <LuArrowUpRight className="group-hover:text-primary text-background transition-all animate-in animate-out ease-in-out delay-75" />
-                        </div>
-                        <span class="text-muted-foreground text-xs">
-                            Dec '24 - May '25
-                        </span>
-                    </div>
-                    <span class="text-sm text-muted-foreground">
-                        Full-stack Developer Intern
-                    </span>
-                </a>
-            </li>
+                    description="gsoc'25 mentee"
+                    meta="2025"
+                />
+            </div>
+            <div class="animate-entrance stagger-7">
+                <ProjectItem
+                    name="Kickoff Labs"
+                    href="https://letskickoff.com/"
+                    description="fullstack dev"
+                    meta="2024-25"
+                />
+            </div>
         </ul>
     </section>
     <section class="mt-8 space-y-4">
-        <div>
+        <div
+            class="animate-entrance flex items-center gap-4"
+            style="animation-delay: 350ms"
+        >
             <h3
                 id="projects"
-                class="font-semibold text-lg sm:text-xl text-muted-foreground"
+                class="font-semibold text-lg sm:text-xl text-muted-foreground shrink-0"
             >
                 <a href="#projects">Projects</a>
             </h3>
+            <hr class="border-border w-full" />
         </div>
 
-        <ProjectCard
-            title="Mnemosyne"
-            description={`Search your images by meaning, not filename. Drop images into a folder, search "cherry blossoms" later, and find them instantly.`}
-            link="https://github.com/SamIsTheFBI/semantic-image-search"
-            img={Mnemosyne}
-        />
-
-        <ul class="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2">
-            <li>
-                <ProjectCard
-                    title="Ciphera"
-                    description="Built a Matrix client app built with Flutter along with a separate backend for orgs to register users. 🥈 1st Runner-Up @ Ethos 2024."
-                    link="https://github.com/SamIsTheFBI/Lets-Chat"
-                    img={Ciphera}
+        <ul class="space-y-5">
+            <div class="animate-entrance" style="animation-delay: 390ms">
+                <ProjectItem
+                    name="Mnemosyne"
+                    href="https://github.com/SamIsTheFBI/semantic-image-search"
+                    description="Search images by meaning, not filename"
                 />
-            </li>
-            <li>
-                <ProjectCard
-                    title="MUNSOC NIT Agartala"
-                    description="Maintained the official website of MUN club of NIT Agartala. Built a full-fledged blog+CMS for student blogs and handled event pages."
-                    link="https://munsoc.in/"
-                    img={Munsoc}
+            </div>
+            <div class="animate-entrance" style="animation-delay: 430ms">
+                <ProjectItem
+                    name="Ciphera"
+                    href="https://github.com/SamIsTheFBI/Lets-Chat"
+                    description="Matrix client app with org registration backend"
+                    award="1st Runner-Up @ Ethos 2024"
                 />
-            </li>
-            <li>
-                <ProjectCard
-                    title="Stellar Minesite"
-                    description="ML-driven webapp that analyzes data on mining sites. 🥇 1st @ ISRO Space Hackathon, NIT Agartala."
-                    link="https://stellar-minesite.vercel.app/"
-                    img={Stellarminesite}
+            </div>
+            <div class="animate-entrance" style="animation-delay: 470ms">
+                <ProjectItem
+                    name="MUNSOC NIT Agartala"
+                    href="https://munsoc.in/"
+                    description="Official club website with blog CMS and event pages"
                 />
-            </li>
-            <li>
-                <ProjectCard
-                    title="Watchmenu"
-                    description="Organize all of your movies and TV shows & watch them easily with this Bash script. Also supports YouTube."
-                    link="https://github.com/SamIsTheFBI/watchmenu"
-                    img={Watchmenu}
+            </div>
+            <div class="animate-entrance" style="animation-delay: 510ms">
+                <ProjectItem
+                    name="Stellar Minesite"
+                    href="https://stellar-minesite.vercel.app/"
+                    description="ML-driven mining site analysis webapp"
+                    award="1st @ ISRO Space Hackathon"
                 />
-            </li>
+            </div>
+            <div class="animate-entrance" style="animation-delay: 550ms">
+                <ProjectItem
+                    name="Watchmenu"
+                    href="https://github.com/SamIsTheFBI/watchmenu"
+                    description="Organize and watch movies & TV shows via Bash"
+                />
+            </div>
         </ul>
     </section>
     <section class="mt-8 space-y-4">
-        <div>
+        <div
+            class="animate-entrance flex items-center gap-4"
+            style="animation-delay: 590ms"
+        >
             <h3
                 id="hire-me"
-                class="font-semibold text-lg sm:text-xl text-muted-foreground"
+                class="font-semibold text-lg sm:text-xl text-muted-foreground shrink-0"
             >
                 <a href="#hire-me">Hire me</a>
             </h3>
+            <hr class="border-border w-full" />
         </div>
-        <div class="max-w-xs sm:max-w-2xl overflow-hidden mx-auto h-40">
-            <MarqueeSkills client:only="react" />
-        </div>
-        <p class="text-sm">
-            Always on a lookout for an opportunity to work on exciting projects.
-            I am open to both full-time and part-time roles. You can contact me
-            preferably through my email and X/Twitter account.
-        </p>
-        <p class="hidden">Check my resume here.</p>
-        <div class="relative pattern w-full aspect-video overflow-hidden rounded-lg group transition-all select-none hidden">
-            <div class="backdrop-blur-xs h-full w-full flex flex-col items-center justify-center group-hover:brightness-50">
-                <h2 class="text-3xl sm:text-6xl tracking-tighter font-bold text-primary dark:text-background">
-                    Shivam Shekhar Soy
-                </h2>
-                <p class="text-xl sm:text-3xl tracking-tighter font-bold text-primary dark:text-background">
-                    Fullstack Developer
-                </p>
-            </div>
-            <a
-                class="group-hover:opacity-100 opacity-0 hover:underline absolute bottom-3 uppercase transition-all text-xs sm:text-xl text-white translate-x-1/2 right-1/2 font-semibold"
-                href="/resume.pdf"
-                target="_blank"
+
+        <p class="text-sm animate-entrance" style="animation-delay: 630ms">
+            If you're looking to connect for a project, feel free to reach out
+            via
+            <button
+                id="copy-email"
+                class="inline-flex items-center gap-0.5 cursor-pointer font-bold group/email"
             >
-                Download my resume ↗
+                <span>email</span>
+                <span class="relative w-[13px] h-[13px]">
+                    <LuCopy
+                        className="absolute inset-0 transition-[opacity,transform] duration-200 ease-out"
+                        size={13}
+                        id="icon-copy"
+                    />
+                    <LuCheck
+                        className="absolute inset-0 opacity-0 scale-75 transition-[opacity,transform] duration-200 ease-out"
+                        size={13}
+                        id="icon-check"
+                    />
+                </span>
+            </button>
+            . You can also find me on
+            <a
+                href="https://github.com/samisthefbi"
+                target="_blank"
+                class="inline-flex items-center gap-0.5 font-bold group/gh cursor-pointer underline"
+            >
+                Github
+                <span class="relative w-[13px] h-[13px]">
+                    <LuGithub
+                        className="absolute inset-0 transition-opacity duration-200 ease-out group-hover/gh:opacity-0"
+                        size={13}
+                    />
+                    <LuArrowUpRight
+                        className="absolute inset-0 opacity-0 group-hover/gh:opacity-100 transition-opacity duration-200 ease-out"
+                        size={13}
+                    />
+                </span>
             </a>
-        </div>
+            and
+            <a
+                href="https://x.com/samisthefbi"
+                target="_blank"
+                class="inline-flex items-center gap-0.5 font-bold group/x cursor-pointer underline"
+            >
+                Twitter
+                <span class="relative w-[13px] h-[13px]">
+                    <RiTwitterXFill
+                        className="absolute inset-0 transition-opacity duration-200 ease-out group-hover/x:opacity-0"
+                        size={13}
+                    />
+                    <LuArrowUpRight
+                        className="absolute inset-0 opacity-0 group-hover/x:opacity-100 transition-opacity duration-200 ease-out"
+                        size={13}
+                    />
+                </span>
+            </a>
+            if you find my work interesting.
+        </p>
     </section>
+
+    <script>
+        const btn = document.getElementById("copy-email");
+        const iconCopy = document.getElementById("icon-copy");
+        const iconCheck = document.getElementById("icon-check");
+
+        btn?.addEventListener("click", async () => {
+            await navigator.clipboard.writeText("shivamshekharsoy@gmail.com");
+            if (iconCopy && iconCheck) {
+                iconCopy.style.opacity = "0";
+                iconCopy.style.transform = "scale(0.75)";
+                iconCheck.style.opacity = "1";
+                iconCheck.style.transform = "scale(1)";
+                setTimeout(() => {
+                    iconCopy.style.opacity = "1";
+                    iconCopy.style.transform = "scale(1)";
+                    iconCheck.style.opacity = "0";
+                    iconCheck.style.transform = "scale(0.75)";
+                }, 1500);
+            }
+        });
+    </script>
 </Base>
