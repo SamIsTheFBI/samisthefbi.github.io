@@ -1,88 +1,102 @@
 ---
-import '@/styles/globals.css'
-import Footer from "@/components/layout/Footer.astro"
-import Header from "@/components/layout/Header.astro"
-import { ViewTransitions, fade } from "astro:transitions"
+import "@/styles/globals.css";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import { ViewTransitions, fade } from "astro:transitions";
 
 type Props = {
-  title: string
-  description: string
-  image?: string
-}
+    title: string;
+    description: string;
+    image?: string;
+};
 
-const { title, description, image } = Astro.props
+const { title, description, image } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-	  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">	
-    
-    <title>{title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-		<meta name="author" content="Shivam Shekhar Soy, SamIsTheFBI" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
 
-    <meta property="og:title" content={title} />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://samisthefbi.github.io/" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image ?? '/og.png'} />
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+        <meta name="author" content="Shivam Shekhar Soy, SamIsTheFBI" />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image} />
-	
-    <ViewTransitions transition:animate={fade({duration: "0.4s"})} />
+        <meta property="og:title" content={title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://samisthefbi.github.io/" />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image ?? "/og.png"} />
 
-    <script src="https://unpkg.com/@knadh/oat/oat.min.js" defer></script>
-	</head>
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={Astro.url} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={image} />
 
-  <script is:inline>
+        <ViewTransitions transition:animate={fade({ duration: "0.4s" })} />
+    </head>
 
-    function setTheme(document) {
-      if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-         document.documentElement.classList.add('dark');
-      } else {
-         document.documentElement.classList.remove('dark');
-      }
+    <script is:inline>
+        function setTheme(document) {
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
 
-      window.matchMedia('(prefers-color-scheme: dark)')
-           .addEventListener('change',({ matches }) => {
-       if (matches) {
-         document.documentElement.classList.add('dark');
-       } else {
-         document.documentElement.classList.remove('dark');
-       }
-      })
-    }
+            window
+                .matchMedia("(prefers-color-scheme: dark)")
+                .addEventListener("change", ({ matches }) => {
+                    if (matches) {
+                        document.documentElement.classList.add("dark");
+                    } else {
+                        document.documentElement.classList.remove("dark");
+                    }
+                });
+        }
 
-    setTheme(document)
-    document.addEventListener('astro:before-swap', ev => {
-      setTheme(ev.newDocument)
-    });
+        setTheme(document);
+        document.addEventListener("astro:before-swap", (ev) => {
+            setTheme(ev.newDocument);
+        });
 
-    window.addEventListener('scroll', () => {
-      document.body.style.height = `${window.innerHeight}px`;
-    });
-
-  </script>
-  <body class="min-h-screen max-h-full bg-background">
-    <!--<Header />-->
-    <div class="h-32 lg:h-52 bg-gradient-to-b from-background via-background/15 to-transparent w-full z-50 fixed -mt-4 pointer-events-none"></div>
-    <main class="flex main-height">
-      <div class="mx-auto max-w-2xl p-4 w-full dark:text-stone-50/90">
-        <slot />
-      </div>
-    </main>
-    <Footer />
-    <div class="h-32 lg:h-52 bg-gradient-to-t from-background via-background/15 to-transparent w-full z-50 bottom-0 fixed pointer-events-none"></div>
-  </body>
+        window.addEventListener("scroll", () => {
+            document.body.style.height = `${window.innerHeight}px`;
+        });
+    </script>
+    <body class="min-h-screen max-h-full bg-background">
+        <!--<Header />-->
+        <div class="h-32 lg:h-52 bg-gradient-to-b from-background via-background/15 to-transparent w-full z-50 fixed -mt-4 pointer-events-none"></div>
+        <main class="flex main-height">
+            <div class="mx-auto max-w-2xl p-4 w-full dark:text-stone-50/90">
+                <slot />
+            </div>
+        </main>
+        <Footer />
+        <div class="h-32 lg:h-52 bg-gradient-to-t from-background via-background/15 to-transparent w-full z-50 bottom-0 fixed pointer-events-none"></div>
+    </body>
 </html>

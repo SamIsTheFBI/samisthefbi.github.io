@@ -32,7 +32,7 @@ html {
   --c1: #b2b2b2;
   --c2: #ffffff;
   --c3: #d9d9d9;
-  
+
   --_g: var(--c3) 0 120deg,#0000 0;
   background:
     conic-gradient(from -60deg at 50% calc(100%/3),var(--_g)),
@@ -157,63 +157,63 @@ html {
 
     --card: 0 0% 98.04%;
     --card-foreground: 240 10% 3.9%;
- 
+
     --popover: 0 0% 98.04%;
     --popover-foreground: 240 10% 3.9%;
- 
+
     --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
- 
+
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
- 
+
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
- 
+
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
- 
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 10% 3.9%;
- 
+
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
- 
+
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
- 
+
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
- 
+
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
- 
+
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
- 
+
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
- 
+
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
- 
+
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -230,44 +230,16 @@ html {
   }
 }
 
-[data-tooltip] { position: relative; }
-
-[data-tooltip]::before,
-[data-tooltip]::after {
-  position: absolute;
-  inset-inline-start: 50%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 150ms, transform 150ms, visibility 150ms;
-  pointer-events: none;
-  z-index: 1000;
+a[target=_blank]:not(:empty):not(:has(*)) {
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: color-mix(in srgb, var(--primary) 50%, transparent);
+    transition: text-decoration-color 200ms ease;
 }
 
-[data-tooltip]::after {
-  content: attr(data-tooltip);
-  inset-block-end: calc(100% + 10px);
-  transform: translate(-50%) translateY(4px);
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  line-height: 1;
-  white-space: nowrap;
-  background: hsl(var(--foreground));
-  color: hsl(var(--background));
-  border-radius: 0.25rem;
-}
-
-[data-tooltip]::before {
-  content: "";
-  inset-block-end: calc(100% - 5px);
-  transform: translate(-50%) translateY(4px);
-  border: 8px solid transparent;
-  border-top-color: hsl(var(--foreground));
-}
-
-[data-tooltip]:is(:hover, :focus-visible)::before,
-[data-tooltip]:is(:hover, :focus-visible)::after {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0.7s;
-  transform: translate(-50%) translateY(0);
+a[target=_blank]:not(:empty):not(:has(*))::after {
+    content: "↗";
+    font-size: 12px;
+    display: inline-block;
+    margin-inline-start: 0.125rem;
 }
